@@ -32,6 +32,5 @@ int main()
 	// ƒŠƒXƒg‚Ì•\¦
 	bidirectionalList.Display();
 
-	getchar();
 	return 0;
 }
