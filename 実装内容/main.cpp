@@ -16,7 +16,7 @@ int main()
 	{
 		cout << "ファイルオープンに失敗" << endl;
 		cin.get();
-		return false;
+		return 1;
 	}
 
 	BidirectionalList bidirectionalList;
