@@ -20,17 +20,18 @@ int main()
 		return 1;
 	}
 
-	//BidirectionalList* bidirectionalList;
-	//string line;
-	// 一行取り出す
-	/*while (getline(scoreFile, line))
-	{
-		// リストに追加
-		bidirectionalList.GetList(line);
-	}
+	BidirectionalList bidirectionalList;
+	string score;
+	string line;
+	 //一行取り出す
+	//while (getline(scoreFile, line))
+	//{
+	//	 // リストに追加
+	//	bidirectionalList.GetList(line);
+	//}
 
-	// リストの表示
-	bidirectionalList.Display();*/
+	// // リストの表示
+	//bidirectionalList.Display();
 
 	getchar();
 	return 0;

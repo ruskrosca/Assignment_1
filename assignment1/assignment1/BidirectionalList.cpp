@@ -2,109 +2,85 @@
 
 BidirectionalList::BidirectionalList()
 {
-	m_Inner = nullptr;
+	m_dummyNode = new Node(Record{ "", "" });
+	m_dummyNode->m_next = m_dummyNode;
+	m_dummyNode->m_prev = m_dummyNode;
+	m_dataNum = 0;
 }
 
 BidirectionalList::~BidirectionalList()
 {
-	
+	Node* current = m_dummyNode->m_next;
+	while (current != m_dummyNode)
+	{
+		Node* temp = current;
+		current = current->m_next;
+		delete temp;
+	}
+	delete m_dummyNode;
 }
 
-// データ数を取得する関数
-int BidirectionalList::NumData()
+int BidirectionalList::NumData() const
 {
-    int count = 0;
-    Iterator it = Begin(); // Iteratorを直接初期化する
-	if (it == nullptr)
+	return m_dataNum;
+}
+
+bool BidirectionalList::Insert(Const_Iterator& ite, const Record& rec)
+{
+	if (!ite.m_node)
 	{
-		return count;
+		Node* newNode = new Node(rec);
+		newNode->m_next = m_dummyNode->m_next;
+		newNode->m_prev = m_dummyNode;
+		if (m_dummyNode->m_next) {
+			m_dummyNode->m_next->m_prev = newNode;
+		}
+		m_dummyNode->m_next = newNode;
+		m_dataNum++;
+		return true; 
 	}
 
-    while (it != End())
-    {
-        count++;
-        ++it;
-    }
+	Node* currentNode = ite.m_node;
+	Node* newNode = new Node(rec);
 
-    return count;
-}
+	newNode->m_next = currentNode;
+	newNode->m_prev = currentNode->m_prev;
 
-// データの挿入
-bool BidirectionalList::Push(BidirectionalList::Iterator * ite)
-{
-	if (ite && ite->m_node)
+	if (currentNode->m_prev)
 	{
-		Inner::Node* newNode = new Inner::Node;
-		newNode = ite->m_node;
-		newNode->m_next = nullptr;
-
-		if (!m_Inner || m_Inner->m_node)
-		{
-			newNode->m_prev = nullptr;
-			m_Inner = new Inner;
-			m_Inner->m_node = newNode;
-		}
-		else
-		{
-			// リストが空でない場合、新しいノードを指定した位置に挿入
-			Inner::Node* current = m_Inner->m_node;
-			while (current->m_next != nullptr && current != ite->m_node)
-			{
-				current = current->m_next;
-			}
-
-			// 新しいノードの前後のポインタを設定
-			newNode->m_prev = current->m_prev;
-			newNode->m_next = current;
-
-			if (current->m_prev != nullptr)
-			{
-				current->m_prev->m_next = newNode;
-			}
-			else
-			{
-				// 挿入位置が先頭の場合
-				m_Inner->m_node = newNode;
-			}
-
-			current->m_prev = newNode;
-		}
+		currentNode->m_prev->m_next = newNode;
 	}
 	else
 	{
+		m_dummyNode->m_next = newNode;
+	}
+
+	currentNode->m_prev = newNode;
+	m_dataNum++;
+	return true;  
+}
+
+bool BidirectionalList::Delete(Const_Iterator& ite)
+{
+	Node* nodeDelete = ite.m_node;
+
+	if (!nodeDelete || nodeDelete == m_dummyNode)
+	{
 		return false;
 	}
-	return true;
-}
 
-
-// データの削除
-bool BidirectionalList::Pop(BidirectionalList::Iterator * ite)
-{
-	// 削除するデータの情報を取得
-	Inner::Node* nodeDelete = ite->m_node;
-	if (nodeDelete == nullptr)
-		return false;
-
-	Inner::Node* prewNode = nodeDelete->m_prev;
-	Inner::Node* nextNode = nodeDelete->m_next;
-
-	if (prewNode != nullptr)
-		prewNode->m_next = nextNode;
-	if (nextNode != nullptr)
-		nextNode->m_prev = prewNode;
-	if (nodeDelete == m_Inner->m_node)
-		m_Inner->m_node = nextNode;
+	nodeDelete->m_prev->m_next = nodeDelete->m_next;
+	nodeDelete->m_next->m_prev = nodeDelete->m_prev;
 	delete nodeDelete;
+	m_dataNum--;
 	return true;
 }
 
-// 先頭イテレータの取得
 BidirectionalList::Iterator BidirectionalList::Begin()
 {
-	if (m_Inner && m_Inner->m_node)
+	if (m_dummyNode->m_next != m_dummyNode)
 	{
-		return Iterator(m_Inner->m_node);
+		return Iterator(m_dummyNode->m_next);
 	}
 	else
 	{
@@ -112,12 +88,11 @@ BidirectionalList::Iterator BidirectionalList::Begin()
 	}
 }
 
-// 先頭コンストイテレータの取得
-BidirectionalList::Const_Iterator BidirectionalList::ConstBegin()
+BidirectionalList::Const_Iterator BidirectionalList::ConstBegin() const
 {
-	if (m_Inner && m_Inner->m_node)
+	if (m_dummyNode->m_next != m_dummyNode)
 	{
-		return Const_Iterator(m_Inner->m_node);
+		return Const_Iterator(m_dummyNode->m_next);
 	}
 	else
 	{
@@ -125,26 +100,26 @@ BidirectionalList::Const_Iterator BidirectionalList::ConstBegin()
 	}
 }
 
-// 末尾イテレータの取得
 BidirectionalList::Iterator BidirectionalList::End()
 {
-	Inner::Node* current = m_Inner->m_node;
-	while (current != nullptr && current != nullptr)
+	if (m_dummyNode->m_prev != m_dummyNode)
 	{
-		current = current->m_next;
+		return Iterator(m_dummyNode);
 	}
-	return Iterator(current);
+	else
+	{
+		return Iterator(nullptr);
+	}
 }
 
-// 末尾コンストイテレータの取得
-BidirectionalList::Const_Iterator BidirectionalList::ConstEnd()
+BidirectionalList::Const_Iterator BidirectionalList::ConstEnd() const
 {
-	Inner::Node* current = m_Inner->m_node;
-	while (current != nullptr && current->m_next != nullptr)
+	if (m_dummyNode->m_prev != m_dummyNode)
 	{
-		current = current->m_next;
+		return Const_Iterator(m_dummyNode);
 	}
-	return Const_Iterator(current);
+	else
+	{
+		return Const_Iterator(nullptr);
+	}
 }
-
-
