@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: C:/Users/owner/Desktop/HAL名古屋_成嶌涼介_課題01/assignment1/assignment1/BidirectionalList.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_45e6de0ce5cb70a623438401f989c883.html">HAL名古屋_成嶌涼介_課題01</a></li><li class="navelem"><a class="el" href="dir_2a52ccd0b05424c48660acfe8a28c6de.html">assignment1</a></li><li class="navelem"><a class="el" href="dir_b9ebc10514a5dd9434a239b26f573961.html">assignment1</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">BidirectionalList.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_bidirectional_list_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/**********************************************************************************/</span><span class="comment">/***********************************************************************************/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef ___BIDIRECTIONAL_LIST_H___</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define ___BIDIRECTIONAL_LIST_H___</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_bidirectional_list.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_bidirectional_list.html">BidirectionalList</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_bidirectional_list_1_1_record.html">   19</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct_bidirectional_list_1_1_record.html">Record</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_bidirectional_list_1_1_record.html#afdb5ed64c19eb159c0147417ea8f4f77">   22</a></span>        std::string <a class="code hl_variable" href="struct_bidirectional_list_1_1_record.html#afdb5ed64c19eb159c0147417ea8f4f77">score</a>;     </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_bidirectional_list_1_1_record.html#a3e4dbb0861c8090a16ee1cd0dd388fc1">   24</a></span>        std::string <a class="code hl_variable" href="struct_bidirectional_list_1_1_record.html#a3e4dbb0861c8090a16ee1cd0dd388fc1">userName</a>;  </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    };</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">struct </span>Node</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="comment">// 成績データ</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <a class="code hl_struct" href="struct_bidirectional_list_1_1_record.html">Record</a> m_record; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="comment">// 次のノードへのポインタ</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        Node* m_next;   </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="comment">// 前のノードへのポインタ</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        Node* m_prev;     </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Node(<span class="keyword">const</span> <a class="code hl_struct" href="struct_bidirectional_list_1_1_record.html">Record</a>&amp; rec) : m_record(rec), m_next(<span class="keyword">nullptr</span>), m_prev(<span class="keyword">nullptr</span>) {}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    Node* m_dummyNode;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> m_size;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html">   44</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">   47</a></span>        Node* <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#afc83b54e6f0e27b2bb011d5eeb6f4cc0">   49</a></span>        <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#afc83b54e6f0e27b2bb011d5eeb6f4cc0">Const_Iterator</a>(Node* node) : <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>(node) {}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#a80d59ba268529cd1ea1af9ef2dd2fb24">   50</a></span>        <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>&amp; <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#a80d59ba268529cd1ea1af9ef2dd2fb24">operator++</a>()  { <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a> = <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>-&gt;m_next; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }        <span class="comment">// 前置           </span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#a49d08b109ce4ff630e0df4c18db4d44b">   51</a></span>        <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>&amp; <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#a49d08b109ce4ff630e0df4c18db4d44b">operator--</a>()  { <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a> = <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>-&gt;m_prev; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }        <span class="comment">// 前置</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#abf0df0cb8da0799a4c175f256b3fda7b">   52</a></span>        <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>&amp; <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#abf0df0cb8da0799a4c175f256b3fda7b">operator++</a>(<span class="keywordtype">int</span>) { <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a> temp = *<span class="keyword">this</span>; ++(*this); <span class="keywordflow">return</span> temp; }    <span class="comment">// 後置</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#a67acc9880b5866c6db0ce67eb617a777">   53</a></span>        <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>&amp; <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#a67acc9880b5866c6db0ce67eb617a777">operator--</a>(<span class="keywordtype">int</span>) { <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a> temp = *<span class="keyword">this</span>; --(*this); <span class="keywordflow">return</span> temp; }    <span class="comment">// 後置</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#afddc30c962d0d456408eeb11332eecc1">   54</a></span>        <a class="code hl_struct" href="struct_bidirectional_list_1_1_record.html">Record</a>&amp; <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#afddc30c962d0d456408eeb11332eecc1">operator*</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>            assert(<a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>-&gt;m_record;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#a1e392ab124be199b5d0c2c8d6c143eb7">   58</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#a1e392ab124be199b5d0c2c8d6c143eb7">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>&amp; ite)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a> == ite.<a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>; }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_const___iterator.html#a47ae73bef01b483b768e677abac03bf5">   59</a></span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bidirectional_list_1_1_const___iterator.html#a47ae73bef01b483b768e677abac03bf5">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>&amp; ite)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a> != ite.<a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>; }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
+</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_iterator.html">   62</a></span>    <span class="keyword">class </span><a class="code hl_class" href="class_bidirectional_list_1_1_iterator.html">Iterator</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_iterator.html#a7eb31f1b562d7d939588dd8ac631ea31">   65</a></span>        <a class="code hl_function" href="class_bidirectional_list_1_1_iterator.html#a7eb31f1b562d7d939588dd8ac631ea31">Iterator</a>(Node* node) : <a class="code hl_class" href="class_bidirectional_list_1_1_const___iterator.html">Const_Iterator</a>(node) {}</div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_bidirectional_list_1_1_iterator.html#a0c0a046041243da1b93c58f6d0cbf835">   66</a></span>        <a class="code hl_struct" href="struct_bidirectional_list_1_1_record.html">Record</a>&amp; <a class="code hl_function" href="class_bidirectional_list_1_1_iterator.html#a0c0a046041243da1b93c58f6d0cbf835">operator*</a>() { </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            assert(<a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a> != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">m_node</a>-&gt;m_record; }</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    };</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_function" href="class_bidirectional_list.html#aceb147f3fd51ed77241565a7151ec911">BidirectionalList</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_function" href="class_bidirectional_list.html#a5c274bb47710dab44295c0359b7e4bdf">~BidirectionalList</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bidirectional_list.html#aa18bb320f0ab3847a6d40757de8d7be7">GetSize</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bidirectional_list.html#a0a4fdb6cb7651d4f03fd89c3e10bd9f3">Insert</a>(Const_Iterator&amp; ite, <span class="keyword">const</span> Record&amp; rec);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bidirectional_list.html#ae31c2b3b028dd3a06b552d9211afa08b">Delete</a>(Const_Iterator&amp; ite);       </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    Iterator <a class="code hl_function" href="class_bidirectional_list.html#a4a2c9c0bb5525ff5ff1b87eb1de6c5e8">Begin</a>() <span class="keyword">const</span>; </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    Const_Iterator <a class="code hl_function" href="class_bidirectional_list.html#a1736cfdc7ca0bd79015e60a6baf4edf2">ConstBegin</a>() <span class="keyword">const</span>;  </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    Iterator <a class="code hl_function" href="class_bidirectional_list.html#a95754686cc244893c4f97151ea5018bf">End</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    Const_Iterator <a class="code hl_function" href="class_bidirectional_list.html#a7ee51b01785259a68b7282aaa51baaab">ConstEnd</a>() <span class="keyword">const</span>;                    </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>};</div>
+</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html">BidirectionalList::Const_Iterator</a></div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00044">BidirectionalList.h:45</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_a1b4568ae4cc0f2524ee7483ed4402f56"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#a1b4568ae4cc0f2524ee7483ed4402f56">BidirectionalList::Const_Iterator::m_node</a></div><div class="ttdeci">Node * m_node</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00047">BidirectionalList.h:47</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_a1e392ab124be199b5d0c2c8d6c143eb7"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#a1e392ab124be199b5d0c2c8d6c143eb7">BidirectionalList::Const_Iterator::operator==</a></div><div class="ttdeci">bool operator==(const Const_Iterator &amp;ite) const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00058">BidirectionalList.h:58</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_a47ae73bef01b483b768e677abac03bf5"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#a47ae73bef01b483b768e677abac03bf5">BidirectionalList::Const_Iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Const_Iterator &amp;ite) const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00059">BidirectionalList.h:59</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_a49d08b109ce4ff630e0df4c18db4d44b"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#a49d08b109ce4ff630e0df4c18db4d44b">BidirectionalList::Const_Iterator::operator--</a></div><div class="ttdeci">Const_Iterator &amp; operator--()</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00051">BidirectionalList.h:51</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_a67acc9880b5866c6db0ce67eb617a777"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#a67acc9880b5866c6db0ce67eb617a777">BidirectionalList::Const_Iterator::operator--</a></div><div class="ttdeci">Const_Iterator &amp; operator--(int)</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00053">BidirectionalList.h:53</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_a80d59ba268529cd1ea1af9ef2dd2fb24"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#a80d59ba268529cd1ea1af9ef2dd2fb24">BidirectionalList::Const_Iterator::operator++</a></div><div class="ttdeci">Const_Iterator &amp; operator++()</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00050">BidirectionalList.h:50</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_abf0df0cb8da0799a4c175f256b3fda7b"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#abf0df0cb8da0799a4c175f256b3fda7b">BidirectionalList::Const_Iterator::operator++</a></div><div class="ttdeci">Const_Iterator &amp; operator++(int)</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00052">BidirectionalList.h:52</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_afc83b54e6f0e27b2bb011d5eeb6f4cc0"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#afc83b54e6f0e27b2bb011d5eeb6f4cc0">BidirectionalList::Const_Iterator::Const_Iterator</a></div><div class="ttdeci">Const_Iterator(Node *node)</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00049">BidirectionalList.h:49</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_const___iterator_html_afddc30c962d0d456408eeb11332eecc1"><div class="ttname"><a href="class_bidirectional_list_1_1_const___iterator.html#afddc30c962d0d456408eeb11332eecc1">BidirectionalList::Const_Iterator::operator*</a></div><div class="ttdeci">Record &amp; operator*() const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00054">BidirectionalList.h:54</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_iterator_html"><div class="ttname"><a href="class_bidirectional_list_1_1_iterator.html">BidirectionalList::Iterator</a></div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00062">BidirectionalList.h:63</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_iterator_html_a0c0a046041243da1b93c58f6d0cbf835"><div class="ttname"><a href="class_bidirectional_list_1_1_iterator.html#a0c0a046041243da1b93c58f6d0cbf835">BidirectionalList::Iterator::operator*</a></div><div class="ttdeci">Record &amp; operator*()</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00066">BidirectionalList.h:66</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_1_1_iterator_html_a7eb31f1b562d7d939588dd8ac631ea31"><div class="ttname"><a href="class_bidirectional_list_1_1_iterator.html#a7eb31f1b562d7d939588dd8ac631ea31">BidirectionalList::Iterator::Iterator</a></div><div class="ttdeci">Iterator(Node *node)</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00065">BidirectionalList.h:65</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html"><div class="ttname"><a href="class_bidirectional_list.html">BidirectionalList</a></div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00015">BidirectionalList.h:16</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_a0a4fdb6cb7651d4f03fd89c3e10bd9f3"><div class="ttname"><a href="class_bidirectional_list.html#a0a4fdb6cb7651d4f03fd89c3e10bd9f3">BidirectionalList::Insert</a></div><div class="ttdeci">bool Insert(Const_Iterator &amp;ite, const Record &amp;rec)</div><div class="ttdoc">イテレータで指定された位置にデータを挿入</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00045">BidirectionalList.cpp:45</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_a1736cfdc7ca0bd79015e60a6baf4edf2"><div class="ttname"><a href="class_bidirectional_list.html#a1736cfdc7ca0bd79015e60a6baf4edf2">BidirectionalList::ConstBegin</a></div><div class="ttdeci">Const_Iterator ConstBegin() const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00130">BidirectionalList.cpp:130</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_a4a2c9c0bb5525ff5ff1b87eb1de6c5e8"><div class="ttname"><a href="class_bidirectional_list.html#a4a2c9c0bb5525ff5ff1b87eb1de6c5e8">BidirectionalList::Begin</a></div><div class="ttdeci">Iterator Begin() const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00111">BidirectionalList.cpp:111</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_a5c274bb47710dab44295c0359b7e4bdf"><div class="ttname"><a href="class_bidirectional_list.html#a5c274bb47710dab44295c0359b7e4bdf">BidirectionalList::~BidirectionalList</a></div><div class="ttdeci">~BidirectionalList()</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00016">BidirectionalList.cpp:16</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_a7ee51b01785259a68b7282aaa51baaab"><div class="ttname"><a href="class_bidirectional_list.html#a7ee51b01785259a68b7282aaa51baaab">BidirectionalList::ConstEnd</a></div><div class="ttdeci">Const_Iterator ConstEnd() const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00168">BidirectionalList.cpp:168</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_a95754686cc244893c4f97151ea5018bf"><div class="ttname"><a href="class_bidirectional_list.html#a95754686cc244893c4f97151ea5018bf">BidirectionalList::End</a></div><div class="ttdeci">Iterator End() const</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00149">BidirectionalList.cpp:149</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_aa18bb320f0ab3847a6d40757de8d7be7"><div class="ttname"><a href="class_bidirectional_list.html#aa18bb320f0ab3847a6d40757de8d7be7">BidirectionalList::GetSize</a></div><div class="ttdeci">int GetSize() const</div><div class="ttdoc">リストのサイズを返す</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00033">BidirectionalList.cpp:33</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_aceb147f3fd51ed77241565a7151ec911"><div class="ttname"><a href="class_bidirectional_list.html#aceb147f3fd51ed77241565a7151ec911">BidirectionalList::BidirectionalList</a></div><div class="ttdeci">BidirectionalList()</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00008">BidirectionalList.cpp:8</a></div></div>
+<div class="ttc" id="aclass_bidirectional_list_html_ae31c2b3b028dd3a06b552d9211afa08b"><div class="ttname"><a href="class_bidirectional_list.html#ae31c2b3b028dd3a06b552d9211afa08b">BidirectionalList::Delete</a></div><div class="ttdeci">bool Delete(Const_Iterator &amp;ite)</div><div class="ttdoc">イテレータで指定位置のデータを削除</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8cpp_source.html#l00088">BidirectionalList.cpp:88</a></div></div>
+<div class="ttc" id="astruct_bidirectional_list_1_1_record_html"><div class="ttname"><a href="struct_bidirectional_list_1_1_record.html">BidirectionalList::Record</a></div><div class="ttdoc">成績データ</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00019">BidirectionalList.h:20</a></div></div>
+<div class="ttc" id="astruct_bidirectional_list_1_1_record_html_a3e4dbb0861c8090a16ee1cd0dd388fc1"><div class="ttname"><a href="struct_bidirectional_list_1_1_record.html#a3e4dbb0861c8090a16ee1cd0dd388fc1">BidirectionalList::Record::userName</a></div><div class="ttdeci">std::string userName</div><div class="ttdoc">ユーザー名</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00024">BidirectionalList.h:24</a></div></div>
+<div class="ttc" id="astruct_bidirectional_list_1_1_record_html_afdb5ed64c19eb159c0147417ea8f4f77"><div class="ttname"><a href="struct_bidirectional_list_1_1_record.html#afdb5ed64c19eb159c0147417ea8f4f77">BidirectionalList::Record::score</a></div><div class="ttdeci">std::string score</div><div class="ttdoc">スコア</div><div class="ttdef"><b>Definition</b> <a href="_bidirectional_list_8h_source.html#l00022">BidirectionalList.h:22</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+</small></address>
+</body>
+</html>

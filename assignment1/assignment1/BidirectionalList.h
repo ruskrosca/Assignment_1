@@ -27,11 +27,11 @@ public:
 private:
 	struct Node
 	{
-		//! 成績データ
+		// 成績データ
 		Record m_record; 
-		//! 次のノードへのポインタ
+		// 次のノードへのポインタ
 		Node* m_next;   
-		//! 前のノードへのポインタ
+		// 前のノードへのポインタ
 		Node* m_prev;     
 
 		Node(const Record& rec) : m_record(rec), m_next(nullptr), m_prev(nullptr) {}
