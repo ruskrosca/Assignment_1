@@ -30,6 +30,7 @@ int main()
 	// 1s‚¸‚Â“Ç‚İ‚Ş
 	while (getline(scoreFile, line))
 	{
+	
 		istringstream istring(line);
 		string score;
 		string userName;
@@ -41,7 +42,6 @@ int main()
 			BidirectionalList::Record rec = { score, userName };
 			bidirectionalList.Insert(it, rec);
 			it = bidirectionalList.End();
-
 		}
 	}
 	scoreFile.close();
