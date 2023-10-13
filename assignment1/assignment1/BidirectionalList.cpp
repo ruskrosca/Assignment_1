@@ -102,7 +102,7 @@ bool BidirectionalList::Delete(Const_Iterator& ite)
 }
 
 /**
-* @fn Iterator Begi
+* @fn Iterator Begie
 * @brief 先頭イテレータを返す
 * @param[out] 先頭イテレータ
 * @return bool 先頭イテレータ
@@ -121,7 +121,7 @@ BidirectionalList::Iterator BidirectionalList::Begin() const
 }
 
 /**
-* @fn Iterator Begi
+* @fn Const_Iterator　ConstBegin
 * @brief 先頭のconstイテレータを返す
 * @param[out] 先頭constイテレータ
 * @return ConstIterato 先頭constイテレータ
@@ -140,7 +140,7 @@ BidirectionalList::Const_Iterator BidirectionalList::ConstBegin() const
 }
 
 /**
-* @fn Iterator Begi
+* @fn Iterator End
 * @brief 末尾イテレータを返す
 * @param[out] 末尾イテレータ
 * @return Iterator 末尾イテレータ
@@ -159,8 +159,8 @@ BidirectionalList::Iterator BidirectionalList::End() const
 }
 
 /**
-* @fn Iterator Begi
-* @brief 先頭のconstイテレータを返す
+* @fn Const_Iterator ConstEnd
+* @brief 末尾のconstイテレータを返す
 * @param[out] 末尾constイテレータ
 * @return ConstIterator 末尾constイテレータ
 * @details constメソッド
