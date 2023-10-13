@@ -1,9 +1,12 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include "BidirectionalList.h"
 
+
 using namespace std;
+
 
 int main()
 {
@@ -22,15 +25,33 @@ int main()
 	BidirectionalList bidirectionalList;
 	string line;
 
-	// 一行取り出す
+	BidirectionalList::Iterator it = bidirectionalList.Begin();
+
+	// 1行ずつ読み込む
 	while (getline(scoreFile, line))
 	{
-		// リストに追加
-		bidirectionalList.GetList(line);
+		istringstream istring(line);
+		string score;
+		string userName;
+
+		// それぞれの変数に格納
+		if (istring >> score >> userName)
+		{
+			// リストに格納
+			BidirectionalList::Record rec = { score, userName };
+			bidirectionalList.Insert(it, rec);
+			it = bidirectionalList.End();
+
+		}
+	}
+	scoreFile.close();
+
+	// 表示
+	for (BidirectionalList::Iterator it = bidirectionalList.Begin(); it != bidirectionalList.End(); ++it)
+	{
+		cout << (*it).score << " " << (*it).userName << endl;
 	}
 
-	// リストの表示
-	bidirectionalList.Display();
-
+	getchar();
 	return 0;
 }
