@@ -1,0 +1,528 @@
+\doxysection{ex01\+\_\+\+Data\+Structure\+::chapter02 名前空間}
+\hypertarget{namespaceex01___data_structure_1_1chapter02}{}\label{namespaceex01___data_structure_1_1chapter02}\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a39bee0bc80a753afa746c5a935d8c9f4}{TEST}} (Get\+Element\+To\+Iterator, Callto\+List)
+\begin{DoxyCompactList}\small\item\em リストの参照がない状態で呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a5b0792d1b010a5007ad61573d1996c20}{TEST}} (Get\+Element\+To\+Iterator, Call\+To\+No\+List)
+\begin{DoxyCompactList}\small\item\em Iteratorから取得した要素に対して、値の代入が行えるのテスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_af238d643ce028f6a376b66ff117cacd4}{TEST}} (Get\+Element\+To\+Iterator, Get\+Iterator\+Is\+Not\+Const\+Iterator)
+\begin{DoxyCompactList}\small\item\em Const\+Iteratorから取得した要素に対して、値の代入が行えないかをチェック \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a13d171864f375b57876e2f2a11037a63}{TEST}} (Get\+Element\+To\+Iterator, Call\+On\+Emty\+List)
+\begin{DoxyCompactList}\small\item\em リストが空の際の、先頭イテレータに対して呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a92062ad38e2265c7f249b6cbcdd18b12}{TEST}} (Get\+Element\+To\+Iterator, Cal\+On\+Iterator)
+\begin{DoxyCompactList}\small\item\em 末尾イテレータに対して呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_acd3716a6e829248277201577ac7cfd4b}{TEST}} (Iterator\+To\+Tail\+Of\+The\+List, Callto\+List)
+\begin{DoxyCompactList}\small\item\em リストの参照がない状態で呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a96176723753497ed778715da3871f7ec}{TEST}} (Iterator\+To\+Tail\+Of\+The\+List, Call\+First\+Iterator\+When\+List\+Is\+Empty)
+\begin{DoxyCompactList}\small\item\em リストが空の際の、先頭イテレータに対して呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a9ee51745d74b879eb467762abe18473b}{TEST}} (Iterator\+To\+Tail\+Of\+The\+List, Call\+On\+ATail\+Iterator)
+\begin{DoxyCompactList}\small\item\em 末尾イテレータに対して呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a26c6b1c375596deb34a8bc9d2541446d}{TEST}} (Iterator\+To\+Tail\+Of\+The\+List, Call\+Two\+Elemts\+List)
+\begin{DoxyCompactList}\small\item\em リストに二つ以上の要素がある場合に呼び出した際の挙動 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_af38fc6d792caaa576790500c68746b47}{TEST}} (Iterator\+To\+Tail\+Of\+The\+List, Performing\+APre\+Increment)
+\begin{DoxyCompactList}\small\item\em 前置インクリメントを行った際の挙動( ++演算子オーバーロードで実装した場合 )テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a7d2b0ba4972ced6d913a05d9d06a2a34}{TEST}} (Iterator\+To\+Tail\+Of\+The\+List, Postfix\+Increments\+Are\+Performed)
+\begin{DoxyCompactList}\small\item\em 後置インクリメントを行った際の挙動( ++演算子オーバーロードで実装した場合 )テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a6025b76c486a4fbf9cbeac15aac2fe77}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Callto\+List)
+\begin{DoxyCompactList}\small\item\em リストの参照がない状態で呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a23176c0878b284801aa38064b472eed7}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Call\+First\+Iterator\+When\+List\+Is\+Empty)
+\begin{DoxyCompactList}\small\item\em リストが空の際の、末尾イテレータに対して呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a8752478d82b519f4ac1b28179efff356}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Call\+On\+ATail\+Iterator)
+\begin{DoxyCompactList}\small\item\em 先頭イテレータに対して呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a36b976843ea18d435c671d851e261d99}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Call\+Two\+Elemts\+List)
+\begin{DoxyCompactList}\small\item\em リストに二つ以上の要素がある場合に呼び出した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_ace665a89b17f17ba18d83ced749ed9fe}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Performing\+APre\+Increment)
+\begin{DoxyCompactList}\small\item\em 前置デクリメントを行った際の挙動( --演算子オーバーロードで実装した場合 )テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a581a2c58e0a09d96872b120715858451}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Postfix\+Increments\+Are\+Performed)
+\begin{DoxyCompactList}\small\item\em 後置デクリメントを行った際の挙動( --演算子オーバーロードで実装した場合 )テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a4200fb0295c941f4b3127d6dd32787b3}{TEST}} (Iterator\+To\+Head\+Of\+The\+List, Get\+Iterator\+Is\+Not\+Const\+Iterator)
+\begin{DoxyCompactList}\small\item\em Const\+Iteratorから、\+Iteratorのコピーが作成されないかをチェック \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a90c3a4b5db52496cd4f349adb47c1526}{TEST}} (Copy\+Iterator, Copy\+Iterator)
+\begin{DoxyCompactList}\small\item\em コピーコンストラクト後の値がコピー元と等しいことをチェックするテスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a4a81457c0930ec98103613c7b1678f4e}{TEST}} (Copy\+Iterator, Get\+Iterator\+Is\+Not\+Const\+Iterator)
+\begin{DoxyCompactList}\small\item\em Iteratorに\+Const\+Iteratorを代入できない事をチェックするテスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a2bf5f56516e69cfc4f273943ac6ddeb7}{TEST}} (Assignment\+Iterator, Asseignment\+Iterator)
+\begin{DoxyCompactList}\small\item\em 代入後の値がコピー元と等しいことをチェックするテスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_ad1c34b4e7cadfe9c3925d2a1229aea1f}{TEST}} (Two\+Iterator\+Identical\+Or\+Comparisons, First\+Iterator\+With\+Last\+Iterator\+List\+Is\+Empty)
+\begin{DoxyCompactList}\small\item\em リストが空の状態での先頭イテレータと末尾イテレータを比較した際の挙動をチェックするテスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_accabfbcf5e2b71dae3f9e3fa6a6f3e1b}{TEST}} (Two\+Iterator\+Identical\+Or\+Comparisons, Identiccal\+Iterator)
+\begin{DoxyCompactList}\small\item\em 同一のイテレータを比較した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a4561947e14864a9f342c9dc9bfaf0094}{TEST}} (Two\+Iterator\+Identical\+Or\+Comparisons, Different\+Iterator)
+\begin{DoxyCompactList}\small\item\em 異なるイテレータを比較した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a93d57c07d496b78dfd2f533696f5d39f}{TEST}} (Two\+Iterator\+Different\+Or\+Comparisons, First\+Iterator\+With\+Last\+Iterator\+List\+Is\+Empty)
+\begin{DoxyCompactList}\small\item\em リストが空の状態での先頭イテレータと末尾イテレータを比較した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a1e5b74f30761ef9be9313dc440efb054}{TEST}} (Two\+Iterator\+Different\+Or\+Comparisons, Identiccal\+Iterator)
+\begin{DoxyCompactList}\small\item\em 同一のイテレータを比較した際の挙動テスト \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceex01___data_structure_1_1chapter02_a960f46b9b8938337b32206156b1478d5}{TEST}} (Two\+Iterator\+Different\+Or\+Comparisons, Different\+Iterator)
+\begin{DoxyCompactList}\small\item\em 異なるイテレータを比較した際の挙動テスト \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{関数詳解}
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a2bf5f56516e69cfc4f273943ac6ddeb7}\label{namespaceex01___data_structure_1_1chapter02_a2bf5f56516e69cfc4f273943ac6ddeb7} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [1/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Assignment\+Iterator}]{,  }\item[{Asseignment\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+代入後の値がコピー元と等しいことをチェックするテスト 
+
+ID\+:Iterator-\/20~\newline
+ イテレータの代入を行うテストです。~\newline
+ コピー元と等しければ成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01817}{1817}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a90c3a4b5db52496cd4f349adb47c1526}\label{namespaceex01___data_structure_1_1chapter02_a90c3a4b5db52496cd4f349adb47c1526} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [2/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Copy\+Iterator}]{,  }\item[{Copy\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+コピーコンストラクト後の値がコピー元と等しいことをチェックするテスト 
+
+ID\+:Iterator-\/18~\newline
+ イテレータのコピーを行うテストです。~\newline
+ コピー元と等しかったら成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01781}{1781}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a4a81457c0930ec98103613c7b1678f4e}\label{namespaceex01___data_structure_1_1chapter02_a4a81457c0930ec98103613c7b1678f4e} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [3/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Copy\+Iterator}]{,  }\item[{Get\+Iterator\+Is\+Not\+Const\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+Iteratorに\+Const\+Iteratorを代入できない事をチェックするテスト 
+
+ID\+:Iterator-\/19~\newline
+ イテレータの代入を行うテストです。~\newline
+ コンパイルエラーになれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01799}{1799}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a13d171864f375b57876e2f2a11037a63}\label{namespaceex01___data_structure_1_1chapter02_a13d171864f375b57876e2f2a11037a63} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [4/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Get\+Element\+To\+Iterator}]{,  }\item[{Call\+On\+Emty\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+リストが空の際の、先頭イテレータに対して呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/3~\newline
+ イテレータの指す要素を取得するテストです。~\newline
+ Assert発生すれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01402}{1402}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a39bee0bc80a753afa746c5a935d8c9f4}\label{namespaceex01___data_structure_1_1chapter02_a39bee0bc80a753afa746c5a935d8c9f4} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [5/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Get\+Element\+To\+Iterator}]{,  }\item[{Callto\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+リストの参照がない状態で呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/0~\newline
+ イテレータの指す要素を取得するテストです。~\newline
+ Assert発生したら成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01343}{1343}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a5b0792d1b010a5007ad61573d1996c20}\label{namespaceex01___data_structure_1_1chapter02_a5b0792d1b010a5007ad61573d1996c20} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [6/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Get\+Element\+To\+Iterator}]{,  }\item[{Call\+To\+No\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+Iteratorから取得した要素に対して、値の代入が行えるのテスト 
+
+ID\+:Iterator-\/1~\newline
+ イテレータの指す要素を取得するテストです。~\newline
+ 値の代入が行えれ成功です。~\newline
+ 代入後に再度呼び出し、値が変更されていることを確認。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01356}{1356}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a92062ad38e2265c7f249b6cbcdd18b12}\label{namespaceex01___data_structure_1_1chapter02_a92062ad38e2265c7f249b6cbcdd18b12} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [7/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Get\+Element\+To\+Iterator}]{,  }\item[{Cal\+On\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+末尾イテレータに対して呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/4~\newline
+ イテレータの指す要素を取得するテストです。~\newline
+ Assert発生すれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01416}{1416}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_af238d643ce028f6a376b66ff117cacd4}\label{namespaceex01___data_structure_1_1chapter02_af238d643ce028f6a376b66ff117cacd4} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [8/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Get\+Element\+To\+Iterator}]{,  }\item[{Get\+Iterator\+Is\+Not\+Const\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+Const\+Iteratorから取得した要素に対して、値の代入が行えないかをチェック 
+
+ID\+:リスト-\/2~\newline
+ イテレータの指す要素を取得するテストです。~\newline
+ コンパイルエラーになることを確認します。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01380}{1380}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a23176c0878b284801aa38064b472eed7}\label{namespaceex01___data_structure_1_1chapter02_a23176c0878b284801aa38064b472eed7} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [9/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Call\+First\+Iterator\+When\+List\+Is\+Empty}]{ }\end{DoxyParamCaption})}
+
+
+
+リストが空の際の、末尾イテレータに対して呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/12~\newline
+ イテレータをリストの先頭に向かって一つ進めるテストです。~\newline
+ Assert発生していれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01608}{1608}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a8752478d82b519f4ac1b28179efff356}\label{namespaceex01___data_structure_1_1chapter02_a8752478d82b519f4ac1b28179efff356} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [10/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Call\+On\+ATail\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+先頭イテレータに対して呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/13~\newline
+ イテレータをリストの先頭に向かって一つ進めるテストです。~\newline
+ Assert発生していれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01626}{1626}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a6025b76c486a4fbf9cbeac15aac2fe77}\label{namespaceex01___data_structure_1_1chapter02_a6025b76c486a4fbf9cbeac15aac2fe77} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [11/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Callto\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+リストの参照がない状態で呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/11~\newline
+ イテレータをリストの先頭に向かって一つ進めるテストです。~\newline
+ Assert発生していれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01591}{1591}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a36b976843ea18d435c671d851e261d99}\label{namespaceex01___data_structure_1_1chapter02_a36b976843ea18d435c671d851e261d99} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [12/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Call\+Two\+Elemts\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+リストに二つ以上の要素がある場合に呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/14~\newline
+ イテレータをリストの先頭に向かって一つ進めるテストです。~\newline
+ 前の要素を指していれば成功です。~\newline
+ リストの末尾から先頭まで呼び出しを行い、期待されている要素が格納されているかを確認する。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01645}{1645}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a4200fb0295c941f4b3127d6dd32787b3}\label{namespaceex01___data_structure_1_1chapter02_a4200fb0295c941f4b3127d6dd32787b3} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [13/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Get\+Iterator\+Is\+Not\+Const\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+Const\+Iteratorから、\+Iteratorのコピーが作成されないかをチェック 
+
+ID\+:Iterator-\/17~\newline
+ イテレータのコピーを行うテストです。~\newline
+ コンパイルエラーになれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01764}{1764}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_ace665a89b17f17ba18d83ced749ed9fe}\label{namespaceex01___data_structure_1_1chapter02_ace665a89b17f17ba18d83ced749ed9fe} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [14/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Performing\+APre\+Increment}]{ }\end{DoxyParamCaption})}
+
+
+
+前置デクリメントを行った際の挙動( --演算子オーバーロードで実装した場合 )テスト 
+
+ID\+:Iterator-\/15~\newline
+ イテレータをリストの先頭に向かって一つ進めるテストです。~\newline
+ 前の要素を指していれば成功です。~\newline
+ デクリメント呼び出し時の値と、デクリメント実行後の値の両方を確認する。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01681}{1681}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a581a2c58e0a09d96872b120715858451}\label{namespaceex01___data_structure_1_1chapter02_a581a2c58e0a09d96872b120715858451} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [15/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Head\+Of\+The\+List}]{,  }\item[{Postfix\+Increments\+Are\+Performed}]{ }\end{DoxyParamCaption})}
+
+
+
+後置デクリメントを行った際の挙動( --演算子オーバーロードで実装した場合 )テスト 
+
+ID\+:Iterator-\/16~\newline
+ イテレータをリストの先頭に向かって一つ進めるテストです。~\newline
+ 前の要素を指していれば成功です。~\newline
+ デクリメント呼び出し時の値と、デクリメント実行後の値の両方を確認する。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01723}{1723}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a96176723753497ed778715da3871f7ec}\label{namespaceex01___data_structure_1_1chapter02_a96176723753497ed778715da3871f7ec} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [16/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Tail\+Of\+The\+List}]{,  }\item[{Call\+First\+Iterator\+When\+List\+Is\+Empty}]{ }\end{DoxyParamCaption})}
+
+
+
+リストが空の際の、先頭イテレータに対して呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/6~\newline
+ イテレータをリストの末尾に向かって一つ進めるテストです。~\newline
+ Assert発生すれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01448}{1448}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a9ee51745d74b879eb467762abe18473b}\label{namespaceex01___data_structure_1_1chapter02_a9ee51745d74b879eb467762abe18473b} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [17/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Tail\+Of\+The\+List}]{,  }\item[{Call\+On\+ATail\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+末尾イテレータに対して呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/7~\newline
+ イテレータをリストの末尾に向かって一つ進めるテストです。~\newline
+ Assert発生すれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01466}{1466}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_acd3716a6e829248277201577ac7cfd4b}\label{namespaceex01___data_structure_1_1chapter02_acd3716a6e829248277201577ac7cfd4b} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [18/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Tail\+Of\+The\+List}]{,  }\item[{Callto\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+リストの参照がない状態で呼び出した際の挙動テスト 
+
+ID\+:Iterator-\/５~\newline
+ イテレータをリストの末尾に向かって一つ進めるテストです。~\newline
+ Assert発生すれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01431}{1431}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a26c6b1c375596deb34a8bc9d2541446d}\label{namespaceex01___data_structure_1_1chapter02_a26c6b1c375596deb34a8bc9d2541446d} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [19/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Tail\+Of\+The\+List}]{,  }\item[{Call\+Two\+Elemts\+List}]{ }\end{DoxyParamCaption})}
+
+
+
+リストに二つ以上の要素がある場合に呼び出した際の挙動 
+
+ID\+:Iterator-\/8~\newline
+ イテレータをリストの末尾に向かって一つ進めるテストです。~\newline
+ 次の要素を指していれば成功です。~\newline
+ リストの先頭から末尾まで呼び出しを行い、期待されている要素が格納されているかを確認する。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01483}{1483}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_af38fc6d792caaa576790500c68746b47}\label{namespaceex01___data_structure_1_1chapter02_af38fc6d792caaa576790500c68746b47} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [20/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Tail\+Of\+The\+List}]{,  }\item[{Performing\+APre\+Increment}]{ }\end{DoxyParamCaption})}
+
+
+
+前置インクリメントを行った際の挙動( ++演算子オーバーロードで実装した場合 )テスト 
+
+ID\+:Iterator-\/9~\newline
+ イテレータをリストの末尾に向かって一つ進めるテストです。~\newline
+ 次の要素を指していれば成功です。~\newline
+ インクリメント呼び出し時の値と、インクリメント実行後の値の両方を確認します~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01516}{1516}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a7d2b0ba4972ced6d913a05d9d06a2a34}\label{namespaceex01___data_structure_1_1chapter02_a7d2b0ba4972ced6d913a05d9d06a2a34} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [21/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Iterator\+To\+Tail\+Of\+The\+List}]{,  }\item[{Postfix\+Increments\+Are\+Performed}]{ }\end{DoxyParamCaption})}
+
+
+
+後置インクリメントを行った際の挙動( ++演算子オーバーロードで実装した場合 )テスト 
+
+ID\+:Iterator-\/10~\newline
+ イテレータをリストの末尾に向かって一つ進めるテストです。~\newline
+ 次の要素を指していれば成功です。~\newline
+ インクリメント呼び出し時の値と、インクリメント実行後の値の両方を確認します。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01554}{1554}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a960f46b9b8938337b32206156b1478d5}\label{namespaceex01___data_structure_1_1chapter02_a960f46b9b8938337b32206156b1478d5} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [22/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Two\+Iterator\+Different\+Or\+Comparisons}]{,  }\item[{Different\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+異なるイテレータを比較した際の挙動テスト 
+
+ID\+:Iterator-\/22~\newline
+ 二つのイテレータが異なるものであるか、比較を行うテストです。~\newline
+ 二つのイテレータが異なるのものであれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01935}{1935}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a93d57c07d496b78dfd2f533696f5d39f}\label{namespaceex01___data_structure_1_1chapter02_a93d57c07d496b78dfd2f533696f5d39f} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [23/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Two\+Iterator\+Different\+Or\+Comparisons}]{,  }\item[{First\+Iterator\+With\+Last\+Iterator\+List\+Is\+Empty}]{ }\end{DoxyParamCaption})}
+
+
+
+リストが空の状態での先頭イテレータと末尾イテレータを比較した際の挙動テスト 
+
+ID\+:Iterator-\/22~\newline
+ 二つのイテレータが異なるものであるか、比較を行うテストです。~\newline
+ 二つのイテレータが異なるのものであれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01898}{1898}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a1e5b74f30761ef9be9313dc440efb054}\label{namespaceex01___data_structure_1_1chapter02_a1e5b74f30761ef9be9313dc440efb054} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [24/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Two\+Iterator\+Different\+Or\+Comparisons}]{,  }\item[{Identiccal\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+同一のイテレータを比較した際の挙動テスト 
+
+ID\+:Iterator-\/22~\newline
+ 二つのイテレータが異なるものであるか、比較を行うテストです。~\newline
+ 二つのイテレータが異なるのものであれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01914}{1914}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_a4561947e14864a9f342c9dc9bfaf0094}\label{namespaceex01___data_structure_1_1chapter02_a4561947e14864a9f342c9dc9bfaf0094} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [25/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Two\+Iterator\+Identical\+Or\+Comparisons}]{,  }\item[{Different\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+異なるイテレータを比較した際の挙動テスト 
+
+ID\+:Iterator-\/22~\newline
+ 二つのイテレータが同一のものであるか、比較を行うテストです。~\newline
+ 二つのイテレータが異なるのものであれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01877}{1877}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_ad1c34b4e7cadfe9c3925d2a1229aea1f}\label{namespaceex01___data_structure_1_1chapter02_ad1c34b4e7cadfe9c3925d2a1229aea1f} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [26/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Two\+Iterator\+Identical\+Or\+Comparisons}]{,  }\item[{First\+Iterator\+With\+Last\+Iterator\+List\+Is\+Empty}]{ }\end{DoxyParamCaption})}
+
+
+
+リストが空の状態での先頭イテレータと末尾イテレータを比較した際の挙動をチェックするテスト 
+
+ID\+:Iterator-\/21~\newline
+ 二つのイテレータが同一のものであるか、比較を行うテストです。~\newline
+ 二つのイテレータが同一のものであれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01838}{1838}} 行目に定義があります。
+
+\Hypertarget{namespaceex01___data_structure_1_1chapter02_accabfbcf5e2b71dae3f9e3fa6a6f3e1b}\label{namespaceex01___data_structure_1_1chapter02_accabfbcf5e2b71dae3f9e3fa6a6f3e1b} 
+\index{ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}!TEST@{TEST}}
+\index{TEST@{TEST}!ex01\_DataStructure::chapter02@{ex01\_DataStructure::chapter02}}
+\doxysubsubsection{\texorpdfstring{TEST()}{TEST()}\hspace{0.1cm}{\footnotesize\ttfamily [27/27]}}
+{\footnotesize\ttfamily ex01\+\_\+\+Data\+Structure\+::chapter02\+::\+TEST (\begin{DoxyParamCaption}\item[{Two\+Iterator\+Identical\+Or\+Comparisons}]{,  }\item[{Identiccal\+Iterator}]{ }\end{DoxyParamCaption})}
+
+
+
+同一のイテレータを比較した際の挙動テスト 
+
+ID\+:Iterator-\/22~\newline
+ 二つのイテレータが同一のものであるか、比較を行うテストです。~\newline
+ 二つのイテレータが同一のものであれば成功です。~\newline
+
+
+ \mbox{\hyperlink{test_8cpp_source}{test.\+cpp}} の \mbox{\hyperlink{test_8cpp_source_l01856}{1856}} 行目に定義があります。
+

@@ -5,6 +5,9 @@
 *//***********************************************************************************/
 #include "BidirectionalList.h"
 
+/**
+* @brief デフォルトコンストラクタ
+*/
 BidirectionalList::BidirectionalList()
 {
 	m_dummyNode = new Node(Record{ "", "" });
@@ -13,6 +16,9 @@ BidirectionalList::BidirectionalList()
 	m_size = 0;
 }
 
+/**
+* @brief デストラクタ
+*/
 BidirectionalList::~BidirectionalList()
 {
 	Node* current = m_dummyNode->m_next;
@@ -26,9 +32,8 @@ BidirectionalList::~BidirectionalList()
 }
 
 /**
-* @fn int GetSize
 * @brief リストのサイズを返す
-* @details constメソッド
+	* @return int リストのサイズ
 */
 int BidirectionalList::GetSize() const
 {
@@ -36,11 +41,12 @@ int BidirectionalList::GetSize() const
 }
 
 /**
-* @fn bool Insert
 * @brief イテレータで指定された位置にデータを挿入
-* @param[in]  イテレータ, 成績情報
-* @param[out] 挿入で来たかどうか
-* @return bool 挿入結果
+* @param ite 挿入する位置を指定したイテレータ
+* @param rec 成績情報
+* @param score スコア
+* @param userName ユーザー名
+* @return 挿入が成功した場合 true、 失敗した場合 false
 */
 bool BidirectionalList::Insert(Const_Iterator& ite, const Record& rec)
 {
@@ -79,11 +85,9 @@ bool BidirectionalList::Insert(Const_Iterator& ite, const Record& rec)
 }
 
 /**
-* @fn bool Delete
 * @brief イテレータで指定位置のデータを削除
-* @param[in]  イテレータ
-* @param[out] 削除で来たかどうか
-* @return bool 削除結果
+* @param[in]  削除する位置を指定したイテレータ
+* @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 */
 bool BidirectionalList::Delete(Const_Iterator& ite)
 {
@@ -102,11 +106,8 @@ bool BidirectionalList::Delete(Const_Iterator& ite)
 }
 
 /**
-* @fn Iterator Begie
 * @brief 先頭イテレータを返す
-* @param[out] 先頭イテレータ
 * @return bool 先頭イテレータ
-* @details constメソッド
 */
 BidirectionalList::Iterator BidirectionalList::Begin() const
 {
@@ -121,11 +122,8 @@ BidirectionalList::Iterator BidirectionalList::Begin() const
 }
 
 /**
-* @fn Const_Iterator　ConstBegin
 * @brief 先頭のconstイテレータを返す
-* @param[out] 先頭constイテレータ
 * @return ConstIterato 先頭constイテレータ
-* @details constメソッド
 */
 BidirectionalList::Const_Iterator BidirectionalList::ConstBegin() const
 {
@@ -140,11 +138,8 @@ BidirectionalList::Const_Iterator BidirectionalList::ConstBegin() const
 }
 
 /**
-* @fn Iterator End
 * @brief 末尾イテレータを返す
-* @param[out] 末尾イテレータ
 * @return Iterator 末尾イテレータ
-* @details constメソッド
 */
 BidirectionalList::Iterator BidirectionalList::End() const
 {
@@ -159,11 +154,8 @@ BidirectionalList::Iterator BidirectionalList::End() const
 }
 
 /**
-* @fn Const_Iterator ConstEnd
 * @brief 末尾のconstイテレータを返す
-* @param[out] 末尾constイテレータ
 * @return ConstIterator 末尾constイテレータ
-* @details constメソッド
 */
 BidirectionalList::Const_Iterator BidirectionalList::ConstEnd() const
 {

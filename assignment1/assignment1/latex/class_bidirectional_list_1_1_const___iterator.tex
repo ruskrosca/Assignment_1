@@ -2,6 +2,11 @@
 \hypertarget{class_bidirectional_list_1_1_const___iterator}{}\label{class_bidirectional_list_1_1_const___iterator}\index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}}
 
 
+双方向リストの要素にアクセスするイテレータクラス  
+
+
+
+
 {\ttfamily \#include $<$Bidirectional\+List.\+h$>$}
 
 Bidirectional\+List\+::Const\+\_\+\+Iterator の継承関係図\begin{figure}[H]
@@ -13,18 +18,20 @@ Bidirectional\+List\+::Const\+\_\+\+Iterator の継承関係図\begin{figure}[H]
 \doxysubsubsection*{公開メンバ関数}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a206a6ef79398920b6d74b9c37822fbd1}{Const\+\_\+\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em デフォルトコンストラクタ \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_afc83b54e6f0e27b2bb011d5eeb6f4cc0}{Const\+\_\+\+Iterator}} (Node \texorpdfstring{$\ast$}{*}node)
-\item 
+\begin{DoxyCompactList}\small\item\em 引数付きコンストラクタ \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \& \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a80d59ba268529cd1ea1af9ef2dd2fb24}{operator++}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em 前置インクリメント演算子 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \& \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a49d08b109ce4ff630e0df4c18db4d44b}{operator-\/-\/}} ()
-\item 
-\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \& \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_abf0df0cb8da0799a4c175f256b3fda7b}{operator++}} (int)
-\item 
-\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \& \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a67acc9880b5866c6db0ce67eb617a777}{operator-\/-\/}} (int)
-\item 
-\mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}} \& \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_afddc30c962d0d456408eeb11332eecc1}{operator\texorpdfstring{$\ast$}{*}}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em 前置デクリメント演算子 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a05642faa9ad14ff163da472b104b0367}{operator++}} (int)
+\begin{DoxyCompactList}\small\item\em 後置インクリメント演算子 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a19a355d9001aff76cfb4bdce25a9c2bd}{operator-\/-\/}} (int)
+\begin{DoxyCompactList}\small\item\em 後置インクリメント演算子 \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}} \& \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_aa5708cc471b7cfed36544a1074484960}{operator\texorpdfstring{$\ast$}{*}}} ()
+\begin{DoxyCompactList}\small\item\em デリファレンス演算子 \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1e392ab124be199b5d0c2c8d6c143eb7}{operator==}} (const \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \&ite) const
 \item 
 bool \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a47ae73bef01b483b768e677abac03bf5}{operator!=}} (const \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \&ite) const
@@ -33,26 +40,49 @@ bool \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a47ae73bef01
 \begin{DoxyCompactItemize}
 \item 
 Node \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\+\_\+node}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ノードを示すポインタ \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{詳解}
+双方向リストの要素にアクセスするイテレータクラス 
 
-
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00044}{44}} 行目に定義があります。
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00058}{58}} 行目に定義があります。
 
 
 
 \doxysubsection{構築子と解体子}
+\Hypertarget{class_bidirectional_list_1_1_const___iterator_a206a6ef79398920b6d74b9c37822fbd1}\label{class_bidirectional_list_1_1_const___iterator_a206a6ef79398920b6d74b9c37822fbd1} 
+\index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!Const\_Iterator@{Const\_Iterator}}
+\index{Const\_Iterator@{Const\_Iterator}!BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}}
+\doxysubsubsection{\texorpdfstring{Const\_Iterator()}{Const\_Iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::\+Const\+\_\+\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+デフォルトコンストラクタ 
+
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00067}{67}} 行目に定義があります。
+
 \Hypertarget{class_bidirectional_list_1_1_const___iterator_afc83b54e6f0e27b2bb011d5eeb6f4cc0}\label{class_bidirectional_list_1_1_const___iterator_afc83b54e6f0e27b2bb011d5eeb6f4cc0} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!Const\_Iterator@{Const\_Iterator}}
 \index{Const\_Iterator@{Const\_Iterator}!BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}}
-\doxysubsubsection{\texorpdfstring{Const\_Iterator()}{Const\_Iterator()}}
+\doxysubsubsection{\texorpdfstring{Const\_Iterator()}{Const\_Iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::\+Const\+\_\+\+Iterator (\begin{DoxyParamCaption}\item[{Node \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00049}{49}} 行目に定義があります。
+引数付きコンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em node} & ノードを指定するポインタ \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00073}{73}} 行目に定義があります。
 
 
 
@@ -65,17 +95,26 @@ Node \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bidirectional_list_1_1_co
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00059}{59}} 行目に定義があります。
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00126}{126}} 行目に定義があります。
 
-\Hypertarget{class_bidirectional_list_1_1_const___iterator_afddc30c962d0d456408eeb11332eecc1}\label{class_bidirectional_list_1_1_const___iterator_afddc30c962d0d456408eeb11332eecc1} 
+\Hypertarget{class_bidirectional_list_1_1_const___iterator_aa5708cc471b7cfed36544a1074484960}\label{class_bidirectional_list_1_1_const___iterator_aa5708cc471b7cfed36544a1074484960} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
 \index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}}
 \doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}} \& Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}} \& Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00054}{54}} 行目に定義があります。
+デリファレンス演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em 成績データの参照} & \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00121}{121}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_1_1_const___iterator_a80d59ba268529cd1ea1af9ef2dd2fb24}\label{class_bidirectional_list_1_1_const___iterator_a80d59ba268529cd1ea1af9ef2dd2fb24} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!operator++@{operator++}}
@@ -85,17 +124,35 @@ Node \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bidirectional_list_1_1_co
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00050}{50}} 行目に定義があります。
+前置インクリメント演算子 
 
-\Hypertarget{class_bidirectional_list_1_1_const___iterator_abf0df0cb8da0799a4c175f256b3fda7b}\label{class_bidirectional_list_1_1_const___iterator_abf0df0cb8da0799a4c175f256b3fda7b} 
+
+\begin{DoxyParams}{引数}
+{\em 更新後のイテレータへの参照} & \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00079}{79}} 行目に定義があります。
+
+\Hypertarget{class_bidirectional_list_1_1_const___iterator_a05642faa9ad14ff163da472b104b0367}\label{class_bidirectional_list_1_1_const___iterator_a05642faa9ad14ff163da472b104b0367} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!operator++@{operator++}}
 \index{operator++@{operator++}!BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}}
 \doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \& Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00052}{52}} 行目に定義があります。
+後置インクリメント演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em 更新前のイテレータへの参照} & \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00099}{99}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_1_1_const___iterator_a49d08b109ce4ff630e0df4c18db4d44b}\label{class_bidirectional_list_1_1_const___iterator_a49d08b109ce4ff630e0df4c18db4d44b} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!operator-\/-\/@{operator-\/-\/}}
@@ -105,17 +162,35 @@ Node \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bidirectional_list_1_1_co
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00051}{51}} 行目に定義があります。
+前置デクリメント演算子 
 
-\Hypertarget{class_bidirectional_list_1_1_const___iterator_a67acc9880b5866c6db0ce67eb617a777}\label{class_bidirectional_list_1_1_const___iterator_a67acc9880b5866c6db0ce67eb617a777} 
+
+\begin{DoxyParams}{引数}
+{\em 更新後のイテレータへの参照} & \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00089}{89}} 行目に定義があります。
+
+\Hypertarget{class_bidirectional_list_1_1_const___iterator_a19a355d9001aff76cfb4bdce25a9c2bd}\label{class_bidirectional_list_1_1_const___iterator_a19a355d9001aff76cfb4bdce25a9c2bd} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!operator-\/-\/@{operator-\/-\/}}
 \index{operator-\/-\/@{operator-\/-\/}!BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}}
 \doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \& Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} Bidirectional\+List\+::\+Const\+\_\+\+Iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00053}{53}} 行目に定義があります。
+後置インクリメント演算子 
+
+
+\begin{DoxyParams}{引数}
+{\em 更新前のイテレータへの参照} & \\
+\hline
+\end{DoxyParams}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00110}{110}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_1_1_const___iterator_a1e392ab124be199b5d0c2c8d6c143eb7}\label{class_bidirectional_list_1_1_const___iterator_a1e392ab124be199b5d0c2c8d6c143eb7} 
 \index{BidirectionalList::Const\_Iterator@{BidirectionalList::Const\_Iterator}!operator==@{operator==}}
@@ -125,7 +200,7 @@ Node \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bidirectional_list_1_1_co
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00058}{58}} 行目に定義があります。
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00125}{125}} 行目に定義があります。
 
 
 
@@ -138,10 +213,14 @@ Node \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bidirectional_list_1_1_co
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00047}{47}} 行目に定義があります。
+ノードを示すポインタ 
+
+
+
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00062}{62}} 行目に定義があります。
 
 
 
 このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/owner/\+Desktop/\+HAL名古屋\+\_\+成嶌涼介\+\_\+課題01/assignment1/assignment1/\mbox{\hyperlink{_bidirectional_list_8h}{Bidirectional\+List.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{_bidirectional_list_8h}{Bidirectional\+List.\+h}}\end{DoxyCompactItemize}

@@ -2,24 +2,29 @@
 \hypertarget{class_bidirectional_list}{}\label{class_bidirectional_list}\index{BidirectionalList@{BidirectionalList}}
 
 
+双方向リストクラス  
+
+
+
+
 {\ttfamily \#include $<$Bidirectional\+List.\+h$>$}
 
 \doxysubsubsection*{クラス}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}}
-\item 
+\begin{DoxyCompactList}\small\item\em 双方向リストの要素にアクセスするイテレータクラス \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}
-\item 
+\begin{DoxyCompactList}\small\item\em Const\+\_\+\+Iteratorを継承した\+Iteratorクラス \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}}
 \begin{DoxyCompactList}\small\item\em 成績データ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{公開メンバ関数}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_bidirectional_list_aceb147f3fd51ed77241565a7151ec911}{Bidirectional\+List}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em デフォルトコンストラクタ \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf}{\texorpdfstring{$\sim$}{\string~}\+Bidirectional\+List}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7}{Get\+Size}} () const
 \begin{DoxyCompactList}\small\item\em リストのサイズを返す \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3}{Insert}} (\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \&ite, const \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}} \&rec)
@@ -27,19 +32,19 @@ bool \mbox{\hyperlink{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3
 bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b}{Delete}} (\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \&ite)
 \begin{DoxyCompactList}\small\item\em イテレータで指定位置のデータを削除 \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_bidirectional_list_a4a2c9c0bb5525ff5ff1b87eb1de6c5e8}{Begin}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em 先頭イテレータを返す \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \mbox{\hyperlink{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2}{Const\+Begin}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em 先頭のconstイテレータを返す \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}} \mbox{\hyperlink{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf}{End}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em 末尾イテレータを返す \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\+\_\+\+Iterator}} \mbox{\hyperlink{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab}{Const\+End}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 先頭のconstイテレータを返す \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{詳解}
+双方向リストクラス 
 
-
- \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00015}{15}} 行目に定義があります。
+ \mbox{\hyperlink{_bidirectional_list_8h_source}{Bidirectional\+List.\+h}} の \mbox{\hyperlink{_bidirectional_list_8h_source_l00018}{18}} 行目に定義があります。
 
 
 
@@ -52,7 +57,11 @@ bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00008}{8}} 行目に定義があります。
+デフォルトコンストラクタ 
+
+
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00011}{11}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf}\label{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf} 
 \index{BidirectionalList@{BidirectionalList}!````~BidirectionalList@{\texorpdfstring{$\sim$}{\string~}BidirectionalList}}
@@ -62,7 +71,11 @@ bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00016}{16}} 行目に定義があります。
+デストラクタ 
+
+
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00022}{22}} 行目に定義があります。
 
 
 
@@ -75,7 +88,16 @@ bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00111}{111}} 行目に定義があります。
+先頭イテレータを返す 
+
+\begin{DoxyReturn}{戻り値}
+\doxylink{class_bidirectional_list_1_1_iterator}{Iterator} 先頭イテレータ
+
+bool 先頭イテレータ 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00112}{112}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2}\label{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2} 
 \index{BidirectionalList@{BidirectionalList}!ConstBegin@{ConstBegin}}
@@ -85,7 +107,14 @@ bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00130}{130}} 行目に定義があります。
+先頭のconstイテレータを返す 
+
+\begin{DoxyReturn}{戻り値}
+Const\+Iterato 先頭constイテレータ 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00128}{128}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab}\label{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab} 
 \index{BidirectionalList@{BidirectionalList}!ConstEnd@{ConstEnd}}
@@ -95,7 +124,16 @@ bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00168}{168}} 行目に定義があります。
+先頭のconstイテレータを返す 
+
+末尾のconstイテレータを返す
+
+\begin{DoxyReturn}{戻り値}
+Const\+Iterator 末尾constイテレータ 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00160}{160}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b}\label{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b} 
 \index{BidirectionalList@{BidirectionalList}!Delete@{Delete}}
@@ -109,17 +147,15 @@ bool \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b
 
 
 \begin{DoxyParams}[1]{引数}
-\mbox{\texttt{ in}}  & {\em イテレータ} & \\
-\hline
-\mbox{\texttt{ out}}  & {\em 削除で来たかどうか} & \\
+\mbox{\texttt{ in}}  & {\em 削除する位置を指定したイテレータ} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{戻り値}
-bool 削除結果 
+削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false 
 \end{DoxyReturn}
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00088}{88}} 行目に定義があります。
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00092}{92}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf}\label{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf} 
 \index{BidirectionalList@{BidirectionalList}!End@{End}}
@@ -129,7 +165,14 @@ bool 削除結果
 
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00149}{149}} 行目に定義があります。
+末尾イテレータを返す 
+
+\begin{DoxyReturn}{戻り値}
+\doxylink{class_bidirectional_list_1_1_iterator}{Iterator} 末尾イテレータ 
+\end{DoxyReturn}
+
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00144}{144}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7}\label{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7} 
 \index{BidirectionalList@{BidirectionalList}!GetSize@{GetSize}}
@@ -141,9 +184,12 @@ bool 削除結果
 
 リストのサイズを返す 
 
-constメソッド 
+\begin{DoxyReturn}{戻り値}
+int リストのサイズ 
+\end{DoxyReturn}
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00033}{33}} 行目に定義があります。
+
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00038}{38}} 行目に定義があります。
 
 \Hypertarget{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3}\label{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3} 
 \index{BidirectionalList@{BidirectionalList}!Insert@{Insert}}
@@ -156,22 +202,26 @@ constメソッド
 イテレータで指定された位置にデータを挿入 
 
 
-\begin{DoxyParams}[1]{引数}
-\mbox{\texttt{ in}}  & {\em イテレータ,成績情報} & \\
+\begin{DoxyParams}{引数}
+{\em ite} & 挿入する位置を指定したイテレータ \\
 \hline
-\mbox{\texttt{ out}}  & {\em 挿入で来たかどうか} & \\
+{\em rec} & 成績情報 \\
+\hline
+{\em score} & スコア \\
+\hline
+{\em user\+Name} & ユーザー名 \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{戻り値}
-bool 挿入結果 
+挿入が成功した場合 true、 失敗した場合 false 
 \end{DoxyReturn}
 
 
- \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00045}{45}} 行目に定義があります。
+ \mbox{\hyperlink{_bidirectional_list_8cpp_source}{Bidirectional\+List.\+cpp}} の \mbox{\hyperlink{_bidirectional_list_8cpp_source_l00051}{51}} 行目に定義があります。
 
 
 
 このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/owner/\+Desktop/\+HAL名古屋\+\_\+成嶌涼介\+\_\+課題01/assignment1/assignment1/\mbox{\hyperlink{_bidirectional_list_8h}{Bidirectional\+List.\+h}}\item 
-C\+:/\+Users/owner/\+Desktop/\+HAL名古屋\+\_\+成嶌涼介\+\_\+課題01/assignment1/assignment1/\mbox{\hyperlink{_bidirectional_list_8cpp}{Bidirectional\+List.\+cpp}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{_bidirectional_list_8h}{Bidirectional\+List.\+h}}\item 
+\mbox{\hyperlink{_bidirectional_list_8cpp}{Bidirectional\+List.\+cpp}}\end{DoxyCompactItemize}

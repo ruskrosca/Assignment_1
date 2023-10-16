@@ -1,133 +1,132 @@
 \doxysection{Bidirectional\+List.\+cpp}
-\hypertarget{_bidirectional_list_8cpp_source}{}\label{_bidirectional_list_8cpp_source}\index{C:/Users/owner/Desktop/HAL名古屋\_成嶌涼介\_課題01/assignment1/assignment1/BidirectionalList.cpp@{C:/Users/owner/Desktop/HAL名古屋\_成嶌涼介\_課題01/assignment1/assignment1/BidirectionalList.cpp}}
-\mbox{\hyperlink{_bidirectional_list_8cpp}{\mbox{[}詳解\mbox{]}}}
+\hypertarget{_bidirectional_list_8cpp_source}{}\label{_bidirectional_list_8cpp_source}\mbox{\hyperlink{_bidirectional_list_8cpp}{\mbox{[}詳解\mbox{]}}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00001}00001\ \textcolor{comment}{/**********************************************************************************/}\textcolor{comment}{/***********************************************************************************/}}
 \DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bidirectional_list_8h}{BidirectionalList.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00007}00007\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00008}\mbox{\hyperlink{class_bidirectional_list_aceb147f3fd51ed77241565a7151ec911}{00008}}\ \mbox{\hyperlink{class_bidirectional_list_aceb147f3fd51ed77241565a7151ec911}{BidirectionalList::BidirectionalList}}()}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00009}00009\ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00010}00010\ \ \ \ \ m\_dummyNode\ =\ \textcolor{keyword}{new}\ Node(\mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}}\{\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}}\ \});}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00011}00011\ \ \ \ \ m\_dummyNode-\/>m\_next\ =\ m\_dummyNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00012}00012\ \ \ \ \ m\_dummyNode-\/>m\_prev\ =\ m\_dummyNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00013}00013\ \ \ \ \ m\_size\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00014}00014\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00016}\mbox{\hyperlink{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf}{00016}}\ \mbox{\hyperlink{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf}{BidirectionalList::\string~BidirectionalList}}()}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00017}00017\ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00018}00018\ \ \ \ \ Node*\ current\ =\ m\_dummyNode-\/>m\_next;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ m\_dummyNode)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00020}00020\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ Node*\ temp\ =\ current;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ current\ =\ current-\/>m\_next;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00024}00024\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{delete}\ m\_dummyNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00026}00026\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00033}\mbox{\hyperlink{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7}{00033}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7}{BidirectionalList::GetSize}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00034}00034\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_size;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00036}00036\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00045}\mbox{\hyperlink{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3}{00045}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3}{BidirectionalList::Insert}}(\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}\&\ ite,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}}\&\ rec)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00046}00046\ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ite.\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\_node}})}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00048}00048\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node(rec);}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ newNode-\/>m\_next\ =\ m\_dummyNode-\/>m\_next;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ newNode-\/>m\_prev\ =\ m\_dummyNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_next)\ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ m\_dummyNode-\/>m\_next-\/>m\_prev\ =\ newNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ m\_dummyNode-\/>m\_next\ =\ newNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ m\_size++;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00058}00058\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00059}00059\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00060}00060\ \ \ \ \ Node*\ currentNode\ =\ ite.\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\_node}};}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00061}00061\ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node(rec);}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00063}00063\ \ \ \ \ newNode-\/>m\_next\ =\ currentNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00064}00064\ \ \ \ \ newNode-\/>m\_prev\ =\ currentNode-\/>m\_prev;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00011}\mbox{\hyperlink{class_bidirectional_list_aceb147f3fd51ed77241565a7151ec911}{00011}}\ \mbox{\hyperlink{class_bidirectional_list_aceb147f3fd51ed77241565a7151ec911}{BidirectionalList::BidirectionalList}}()}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00013}00013\ \ \ \ \ m\_dummyNode\ =\ \textcolor{keyword}{new}\ Node(\mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}}\{\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00014}00014\ \ \ \ \ m\_dummyNode-\/>m\_next\ =\ m\_dummyNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00015}00015\ \ \ \ \ m\_dummyNode-\/>m\_prev\ =\ m\_dummyNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00016}00016\ \ \ \ \ m\_size\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00017}00017\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00022}\mbox{\hyperlink{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf}{00022}}\ \mbox{\hyperlink{class_bidirectional_list_a5c274bb47710dab44295c0359b7e4bdf}{BidirectionalList::\string~BidirectionalList}}()}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00024}00024\ \ \ \ \ Node*\ current\ =\ m\_dummyNode-\/>m\_next;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ m\_dummyNode)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ Node*\ temp\ =\ current;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ current\ =\ current-\/>m\_next;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ temp;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{delete}\ m\_dummyNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00032}00032\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00038}\mbox{\hyperlink{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7}{00038}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_bidirectional_list_aa18bb320f0ab3847a6d40757de8d7be7}{BidirectionalList::GetSize}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00039}00039\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_size;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00051}\mbox{\hyperlink{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3}{00051}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bidirectional_list_a0a4fdb6cb7651d4f03fd89c3e10bd9f3}{BidirectionalList::Insert}}(\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}\&\ ite,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_bidirectional_list_1_1_record}{Record}}\&\ rec)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (!ite.\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\_node}})}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node(rec);}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ newNode-\/>m\_next\ =\ m\_dummyNode-\/>m\_next;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ newNode-\/>m\_prev\ =\ m\_dummyNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_next)\ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ m\_dummyNode-\/>m\_next-\/>m\_prev\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ m\_dummyNode-\/>m\_next\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ m\_size++;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00064}00064\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (currentNode-\/>m\_prev)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00067}00067\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ currentNode-\/>m\_prev-\/>m\_next\ =\ newNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00069}00069\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00071}00071\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ m\_dummyNode-\/>m\_next\ =\ newNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00073}00073\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00075}00075\ \ \ \ \ currentNode-\/>m\_prev\ =\ newNode;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00076}00076\ \ \ \ \ m\_size++;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00066}00066\ \ \ \ \ Node*\ currentNode\ =\ ite.\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\_node}};}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00067}00067\ \ \ \ \ Node*\ newNode\ =\ \textcolor{keyword}{new}\ Node(rec);}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00069}00069\ \ \ \ \ newNode-\/>m\_next\ =\ currentNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00070}00070\ \ \ \ \ newNode-\/>m\_prev\ =\ currentNode-\/>m\_prev;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{if}\ (currentNode-\/>m\_prev)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00073}00073\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ currentNode-\/>m\_prev-\/>m\_next\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00077}00077\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ m\_dummyNode-\/>m\_next\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00079}00079\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00088}\mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b}{00088}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b}{BidirectionalList::Delete}}(\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}\&\ ite)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00089}00089\ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00090}00090\ \ \ \ \ Node*\ nodeDelete\ =\ ite.\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\_node}};}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{if}\ (!nodeDelete\ ||\ nodeDelete\ ==\ m\_dummyNode)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00093}00093\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00095}00095\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00096}00096\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00097}00097\ \ \ \ \ nodeDelete-\/>m\_prev-\/>m\_next\ =\ nodeDelete-\/>m\_next;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00098}00098\ \ \ \ \ nodeDelete-\/>m\_next-\/>m\_prev\ =\ nodeDelete-\/>m\_prev;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keyword}{delete}\ nodeDelete;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00100}00100\ \ \ \ \ m\_size-\/-\/;}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00102}00102\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00111}\mbox{\hyperlink{class_bidirectional_list_a4a2c9c0bb5525ff5ff1b87eb1de6c5e8}{00111}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{BidirectionalList::Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a4a2c9c0bb5525ff5ff1b87eb1de6c5e8}{BidirectionalList::Begin}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00112}00112\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_next\ !=\ m\_dummyNode)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00114}00114\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(m\_dummyNode-\/>m\_next);}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00116}00116\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00118}00118\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00120}00120\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00121}00121\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00122}00122\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00130}\mbox{\hyperlink{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2}{00130}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{BidirectionalList::Const\_Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2}{BidirectionalList::ConstBegin}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00131}00131\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_next\ !=\ m\_dummyNode)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00133}00133\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(m\_dummyNode-\/>m\_next);}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00135}00135\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00137}00137\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(\textcolor{keyword}{nullptr});}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00139}00139\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00140}00140\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00149}\mbox{\hyperlink{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf}{00149}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{BidirectionalList::Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf}{BidirectionalList::End}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00150}00150\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_prev\ !=\ m\_dummyNode)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00152}00152\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(m\_dummyNode);}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00154}00154\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00156}00156\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00158}00158\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00159}00159\ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00160}00160\ }
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00168}\mbox{\hyperlink{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab}{00168}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{BidirectionalList::Const\_Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab}{BidirectionalList::ConstEnd}}()\textcolor{keyword}{\ const}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00169}00169\ \textcolor{keyword}{}\{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_prev\ !=\ m\_dummyNode)}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00171}00171\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(m\_dummyNode);}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00173}00173\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00175}00175\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(\textcolor{keyword}{nullptr});}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00177}00177\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00178}00178\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00081}00081\ \ \ \ \ currentNode-\/>m\_prev\ =\ newNode;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00082}00082\ \ \ \ \ m\_size++;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00085}00085\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00092}\mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b}{00092}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bidirectional_list_ae31c2b3b028dd3a06b552d9211afa08b}{BidirectionalList::Delete}}(\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}\&\ ite)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00094}00094\ \ \ \ \ Node*\ nodeDelete\ =\ ite.\mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator_a1b4568ae4cc0f2524ee7483ed4402f56}{m\_node}};}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordflow}{if}\ (!nodeDelete\ ||\ nodeDelete\ ==\ m\_dummyNode)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00097}00097\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00099}00099\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00101}00101\ \ \ \ \ nodeDelete-\/>m\_prev-\/>m\_next\ =\ nodeDelete-\/>m\_next;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00102}00102\ \ \ \ \ nodeDelete-\/>m\_next-\/>m\_prev\ =\ nodeDelete-\/>m\_prev;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{keyword}{delete}\ nodeDelete;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00104}00104\ \ \ \ \ m\_size-\/-\/;}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00112}\mbox{\hyperlink{class_bidirectional_list_a4a2c9c0bb5525ff5ff1b87eb1de6c5e8}{00112}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{BidirectionalList::Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a4a2c9c0bb5525ff5ff1b87eb1de6c5e8}{BidirectionalList::Begin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00113}00113\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_next\ !=\ m\_dummyNode)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00115}00115\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(m\_dummyNode-\/>m\_next);}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00119}00119\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00128}\mbox{\hyperlink{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2}{00128}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{BidirectionalList::Const\_Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a1736cfdc7ca0bd79015e60a6baf4edf2}{BidirectionalList::ConstBegin}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00129}00129\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_next\ !=\ m\_dummyNode)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00131}00131\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(m\_dummyNode-\/>m\_next);}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00133}00133\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00135}00135\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00144}\mbox{\hyperlink{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf}{00144}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{BidirectionalList::Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a95754686cc244893c4f97151ea5018bf}{BidirectionalList::End}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00145}00145\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_prev\ !=\ m\_dummyNode)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(m\_dummyNode);}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00151}00151\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_iterator}{Iterator}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00154}00154\ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00160}\mbox{\hyperlink{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab}{00160}}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{BidirectionalList::Const\_Iterator}}\ \mbox{\hyperlink{class_bidirectional_list_a7ee51b01785259a68b7282aaa51baaab}{BidirectionalList::ConstEnd}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00161}00161\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_dummyNode-\/>m\_prev\ !=\ m\_dummyNode)}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00163}00163\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(m\_dummyNode);}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00165}00165\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00167}00167\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_bidirectional_list_1_1_const___iterator}{Const\_Iterator}}(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00169}00169\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_bidirectional_list_8cpp_source_l00170}00170\ \}}
 
 \end{DoxyCode}

@@ -385,7 +385,7 @@ namespace ex01_DataStructure
 			BidirectionalList::Record rec = { "1", "a" };
 			list2.Insert(it2, rec);
 			// ï ÉäÉXÉgÇÃèÓïÒÇìnÇ∑
-			EXPECT_FALSE(false, list2.Delete(it));
+			EXPECT_FALSE(list2.Delete(it));
 		}
 
 		/**********************************************************************************//**
@@ -1342,8 +1342,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetElementToIterator, CalltoList)
 		{
-			BidirectionalList::Iterator it(nullptr);
-			ASSERT_DEATH((*it), ".*");
+			BidirectionalList::Iterator it;
+			EXPECT_DEATH((*it), ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1403,7 +1403,7 @@ namespace ex01_DataStructure
 		{
 			BidirectionalList list;
 			BidirectionalList::Iterator it = list.Begin();
-			ASSERT_DEATH((*it),".*");
+			EXPECT_DEATH(*it,".*");
 		}
 
 
@@ -1419,6 +1419,7 @@ namespace ex01_DataStructure
 			BidirectionalList::Iterator it = list.End();
 
 			ASSERT_DEATH((*it), ".*");
+
 		}
 
 		/**********************************************************************************//**
@@ -1429,9 +1430,13 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToTailOfTheList, CalltoList)
 		{
-			BidirectionalList::Iterator it(nullptr);
+			BidirectionalList::Iterator it;
 
 			ASSERT_DEATH({ ++it; }, ".*");
+
+			BidirectionalList::Iterator it2;
+
+			ASSERT_DEATH({ it2++; }, ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1446,6 +1451,10 @@ namespace ex01_DataStructure
 			BidirectionalList::Iterator it = list.Begin();
 
 			ASSERT_DEATH({ ++it; }, ".*");
+
+			BidirectionalList::Iterator it2 = list.Begin();
+
+			ASSERT_DEATH({ it2++; }, ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1459,6 +1468,9 @@ namespace ex01_DataStructure
 			BidirectionalList list;
 			BidirectionalList::Iterator ite = list.End();
 			ASSERT_DEATH(++ite, ".*");
+
+			BidirectionalList::Iterator ite2 = list.End();
+			ASSERT_DEATH(ite2++, ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1478,6 +1490,13 @@ namespace ex01_DataStructure
 			++ite;
 			BidirectionalList::Record rec2 = { "2", "b" };
 			list.Insert(ite, rec2);
+
+			ite = list.Begin();
+			EXPECT_EQ((*ite).score, rec.score);
+			EXPECT_EQ((*ite).userName, rec.userName);
+			++ite;
+			EXPECT_EQ((*ite).score, rec2.score);
+			EXPECT_EQ((*ite).userName, rec2.userName);
 
 			ite = list.Begin();
 			EXPECT_EQ((*ite).score, rec.score);
@@ -1571,9 +1590,13 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToHeadOfTheList, CalltoList)
 		{
-			BidirectionalList::Iterator it(nullptr);
+			BidirectionalList::Iterator it;
 
 			ASSERT_DEATH({ --it; }, ".*");
+
+			BidirectionalList::Iterator it2;
+
+			ASSERT_DEATH({ it2--; }, ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1588,6 +1611,10 @@ namespace ex01_DataStructure
 			BidirectionalList::Iterator it = list.End();
 
 			ASSERT_DEATH({ --it; }, ".*");
+
+			BidirectionalList::Iterator it2 = list.End();
+
+			ASSERT_DEATH({ it2--; }, ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1602,6 +1629,10 @@ namespace ex01_DataStructure
 			BidirectionalList::Iterator ite = list.Begin();
 
 			ASSERT_DEATH(--ite, ".*");
+
+			BidirectionalList::Iterator ite2 = list.Begin();
+
+			ASSERT_DEATH(ite2--, ".*");
 		}
 
 		/**********************************************************************************//**
@@ -1627,6 +1658,15 @@ namespace ex01_DataStructure
 			EXPECT_EQ((*ite).score, "2");
 			EXPECT_EQ((*ite).userName, "b");
 			ite--;
+			EXPECT_EQ((*ite).score, "1");
+			EXPECT_EQ((*ite).userName, "a");
+
+
+			ite = list.End();
+			--ite;
+			EXPECT_EQ((*ite).score, "2");
+			EXPECT_EQ((*ite).userName, "b");
+			--ite;
 			EXPECT_EQ((*ite).score, "1");
 			EXPECT_EQ((*ite).userName, "a");
 		}
