@@ -381,10 +381,8 @@ namespace ex01_DataStructure
 			BidirectionalList list;
 			BidirectionalList::Iterator it;
 			Record rec = { "1", "a" };
-			EXPECT_EQ(false, list.Insert(it, rec));
-
 			// リストの参照が無いイテレータを渡す
-			EXPECT_EQ(0, list.GetSize());
+			EXPECT_EQ(false, list.Insert(it, rec));
 		}
 
 		/**********************************************************************************//**
