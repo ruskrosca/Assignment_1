@@ -5,6 +5,9 @@
 *//***********************************************************************************/
 #include "BidirectionalList.h"
 
+/**
+* @brief デフォルトコンストラクタ
+*/
 BidirectionalList::BidirectionalList()
 {
 	m_dummyNode = new Node(Record{ "", "" });
@@ -13,22 +16,27 @@ BidirectionalList::BidirectionalList()
 	m_size = 0;
 }
 
+/**
+* @brief デストラクタ
+*/
 BidirectionalList::~BidirectionalList()
 {
 	Node* current = m_dummyNode->m_next;
+	// ダミーノードを指すまで回す
 	while (current != m_dummyNode)
 	{
 		Node* temp = current;
 		current = current->m_next;
+		// ノードの削除
 		delete temp;
 	}
+	// ダミーノードの削除
 	delete m_dummyNode;
 }
 
 /**
-* @fn int GetSize
 * @brief リストのサイズを返す
-* @details constメソッド
+* @return int リストのサイズ
 */
 int BidirectionalList::GetSize() const
 {
@@ -36,16 +44,21 @@ int BidirectionalList::GetSize() const
 }
 
 /**
-* @fn bool Insert
 * @brief イテレータで指定された位置にデータを挿入
-* @param[in]  イテレータ, 成績情報
-* @param[out] 挿入で来たかどうか
-* @return bool 挿入結果
+* @param ite 挿入する位置を指定したイテレータ
+* @param rec 成績情報
+* @param score スコア
+* @param userName ユーザー名
+* @return 挿入が成功した場合 true、 失敗した場合(不正なイテレータの場合) false
 */
 bool BidirectionalList::Insert(Const_Iterator& ite, const Record& rec)
 {
+	// 不正なイテレータを除外
+	if (ite.m_list != this) return false;
+
 	if (!ite.m_node)
 	{
+		// 新しいノードの作成
 		Node* newNode = new Node(rec);
 		newNode->m_next = m_dummyNode->m_next;
 		newNode->m_prev = m_dummyNode;
@@ -57,6 +70,7 @@ bool BidirectionalList::Insert(Const_Iterator& ite, const Record& rec)
 		return true; 
 	}
 
+	// イテレータの位置に新しいノードを挿入
 	Node* currentNode = ite.m_node;
 	Node* newNode = new Node(rec);
 
@@ -79,100 +93,102 @@ bool BidirectionalList::Insert(Const_Iterator& ite, const Record& rec)
 }
 
 /**
-* @fn bool Delete
 * @brief イテレータで指定位置のデータを削除
-* @param[in]  イテレータ
-* @param[out] 削除で来たかどうか
-* @return bool 削除結果
+* @param[in]  削除する位置を指定したイテレータ
+* @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 */
 bool BidirectionalList::Delete(Const_Iterator& ite)
 {
 	Node* nodeDelete = ite.m_node;
 
-	if (!nodeDelete || nodeDelete == m_dummyNode)
+	// 不正なイテレータ、ダミーノード, 異なるリストの要素を除外
+	if (!nodeDelete || nodeDelete == m_dummyNode ||
+		ite.m_list != this)
 	{
 		return false;
 	}
-
+	
+	// 削除するノードの前後をつなげる
 	nodeDelete->m_prev->m_next = nodeDelete->m_next;
 	nodeDelete->m_next->m_prev = nodeDelete->m_prev;
+	// ノード削除
 	delete nodeDelete;
 	m_size--;
 	return true;
 }
 
 /**
-* @fn Iterator Begi
 * @brief 先頭イテレータを返す
-* @param[out] 先頭イテレータ
 * @return bool 先頭イテレータ
-* @details constメソッド
 */
 BidirectionalList::Iterator BidirectionalList::Begin() const
 {
+	// リストが空じゃないか
 	if (m_dummyNode->m_next != m_dummyNode)
 	{
-		return Iterator(m_dummyNode->m_next);
+		// 先頭イテレータを返す
+		return Iterator(m_dummyNode->m_next, this);
 	}
 	else
 	{
-		return Iterator(nullptr);
+		// 空の先頭イテレータを返す
+		return Iterator(nullptr, this);
 	}
 }
 
 /**
-* @fn Iterator Begi
 * @brief 先頭のconstイテレータを返す
-* @param[out] 先頭constイテレータ
 * @return ConstIterato 先頭constイテレータ
-* @details constメソッド
 */
 BidirectionalList::Const_Iterator BidirectionalList::ConstBegin() const
 {
+	// リストが空じゃないか
 	if (m_dummyNode->m_next != m_dummyNode)
 	{
-		return Const_Iterator(m_dummyNode->m_next);
+		// 先頭constイテレータを返す
+		return Const_Iterator(m_dummyNode->m_next, this);
 	}
 	else
 	{
-		return Const_Iterator(nullptr);
+		// 空の先頭constイテレータを返す
+		return Const_Iterator(nullptr, this);
 	}
 }
 
 /**
-* @fn Iterator Begi
 * @brief 末尾イテレータを返す
-* @param[out] 末尾イテレータ
 * @return Iterator 末尾イテレータ
-* @details constメソッド
 */
 BidirectionalList::Iterator BidirectionalList::End() const
 {
+	// リストが空じゃないか
 	if (m_dummyNode->m_prev != m_dummyNode)
 	{
-		return Iterator(m_dummyNode);
+		// 末尾イテレータを返す
+		return Iterator(m_dummyNode, this);
 	}
 	else
 	{
-		return Iterator(nullptr);
+		// 空の末尾イテレータを返す
+		return Iterator(nullptr, this);
 	}
 }
 
 /**
-* @fn Iterator Begi
-* @brief 先頭のconstイテレータを返す
-* @param[out] 末尾constイテレータ
+* @brief 末尾のconstイテレータを返す
 * @return ConstIterator 末尾constイテレータ
-* @details constメソッド
 */
 BidirectionalList::Const_Iterator BidirectionalList::ConstEnd() const
 {
+	// リストが空じゃないか
 	if (m_dummyNode->m_prev != m_dummyNode)
 	{
-		return Const_Iterator(m_dummyNode);
+		// 末尾constイテレータを返す
+		return Const_Iterator(m_dummyNode, this);
 	}
 	else
 	{
-		return Const_Iterator(nullptr);
+		// 空の末尾constイテレータを返す
+		return Const_Iterator(nullptr, this);
 	}
 }

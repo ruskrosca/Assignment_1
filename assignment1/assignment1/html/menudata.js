@@ -23,17 +23,17 @@
  @licend  The above is the entire license notice for the JavaScript code in this file
 */
 var menudata={children:[
-{text:"総合概要",url:"index.html"},
-{text:"クラス",url:"annotated.html",children:[
-{text:"クラス一覧",url:"annotated.html"},
-{text:"クラス索引",url:"classes.html"},
-{text:"クラス階層",url:"hierarchy.html"},
-{text:"クラスメンバ",url:"functions.html",children:[
-{text:"全て",url:"functions.html"},
-{text:"関数",url:"functions_func.html"},
-{text:"変数",url:"functions_vars.html"}]}]},
-{text:"ファイル",url:"files.html",children:[
-{text:"ファイル一覧",url:"files.html"},
-{text:"ファイルメンバ",url:"globals.html",children:[
-{text:"全て",url:"globals.html"},
-{text:"関数",url:"globals_func.html"}]}]}]}
+{text:"Main Page",url:"index.html"},
+{text:"Classes",url:"annotated.html",children:[
+{text:"Class List",url:"annotated.html"},
+{text:"Class Index",url:"classes.html"},
+{text:"Class Hierarchy",url:"hierarchy.html"},
+{text:"Class Members",url:"functions.html",children:[
+{text:"All",url:"functions.html"},
+{text:"Functions",url:"functions_func.html"},
+{text:"Variables",url:"functions_vars.html"}]}]},
+{text:"Files",url:"files.html",children:[
+{text:"File List",url:"files.html"},
+{text:"File Members",url:"globals.html",children:[
+{text:"All",url:"globals.html"},
+{text:"Functions",url:"globals_func.html"}]}]}]}

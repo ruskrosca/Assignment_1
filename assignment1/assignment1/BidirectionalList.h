@@ -61,16 +61,20 @@ public:
 		//! ノードを示すポインタ
 		Node* m_node;
 
+		//! リストのポインタ
+		const BidirectionalList* m_list;
+
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
-		Const_Iterator() : m_node(nullptr) {}
+		Const_Iterator() : m_node(nullptr), m_list(nullptr) {}
 
 		/**
 		* @brief 引数付きコンストラクタ
 		* @param node ノードを指定するポインタ
+		* @param list イテレータの所属しているリストの情報
 		*/
-		Const_Iterator(Node* node) : m_node(node) {}
+		explicit Const_Iterator(Node* node, const BidirectionalList* list) : m_node(node), m_list(list){}
 
 		/**
 		* @brief 前置インクリメント演算子
@@ -146,13 +150,14 @@ public:
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
-		Iterator() : Const_Iterator(nullptr) {}
+		Iterator() : Const_Iterator() {}
 
 		/**
 		* @brief 引数付きコンストラクタ
 		* @param node ノードを指定するポインタ
+		* @param list イテレータの所属しているリストの情報
 		*/
-		Iterator(Node* node) : Const_Iterator(node) {}
+		explicit Iterator(Node* node, const BidirectionalList* list) : Const_Iterator(node, list){}
 
 		/**
 		* @brief デリファレンス演算子
@@ -167,6 +172,11 @@ public:
 	* @brief デフォルトコンストラクタ
 	*/
 	BidirectionalList();
+
+	/**
+	* @brief コピーの禁止を行う
+	*/
+	BidirectionalList(const BidirectionalList&) = delete;
 
 	/**
 	* @brief デストラクタ
@@ -226,5 +236,4 @@ public:
 	*/
 	Const_Iterator ConstEnd() const;					
 };
-
 #endif

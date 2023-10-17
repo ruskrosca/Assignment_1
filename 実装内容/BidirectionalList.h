@@ -12,10 +12,15 @@
 
 using namespace std;
 
+/**
+* @brief 双方向リストクラス
+*/
 class BidirectionalList
 {
 public:
-	//! 成績データ
+	/**
+	* @brief 成績データ
+	*/
 	struct Record
 	{
 		//! スコア
@@ -25,6 +30,9 @@ public:
 	};
 
 private:
+	/**
+	* @brief リスト内の要素
+	*/
 	struct Node
 	{
 		//! 成績データ
@@ -34,109 +42,198 @@ private:
 		//! 前のノードへのポインタ
 		Node* m_prev;     
 
-		Node(const Record& rec) : m_record(rec), m_next(nullptr), m_prev(nullptr) {}
+		explicit Node(const Record& rec) : m_record(rec), m_next(nullptr), m_prev(nullptr) {}
 	};
 
+	//! ダミーノード
 	Node* m_dummyNode;
+
+	//! 要素数のカウント用変数
 	int m_size;
 
 public:
+	/**
+	* @brief 双方向リストの要素にアクセスするイテレータクラス
+	*/
 	class Const_Iterator
 	{
 	public:
+		//! ノードを示すポインタ
 		Node* m_node;
 
-		Const_Iterator(Node* node) : m_node(node) {}
-		Const_Iterator& operator++()  { m_node = m_node->m_next; return *this; }		// 前置			
-		Const_Iterator& operator--()  { m_node = m_node->m_prev; return *this; }		// 前置
-		Const_Iterator& operator++(int) { Const_Iterator temp = *this; ++(*this); return temp; }	// 後置
-		Const_Iterator& operator--(int) { Const_Iterator temp = *this; --(*this); return temp; }	// 後置
-		Record& operator*() const{
+		//! リストのポインタ
+		const BidirectionalList* m_list;
+
+		/**
+		* @brief デフォルトコンストラクタ
+		*/
+		Const_Iterator() : m_node(nullptr), m_list(nullptr) {}
+
+		/**
+		* @brief 引数付きコンストラクタ
+		* @param node ノードを指定するポインタ
+		* @param list イテレータの所属しているリストの情報
+		*/
+		explicit Const_Iterator(Node* node, const BidirectionalList* list) : m_node(node), m_list(list){}
+
+		/**
+		* @brief 前置インクリメント演算子
+		* @return 更新後のイテレータへの参照
+		*/
+		Const_Iterator& operator++()  { 
+			assert(m_node != nullptr);
+			m_node = m_node->m_next;
+			return *this;
+		}
+
+		/**
+		* @brief 前置デクリメント演算子
+		* @return 更新後のイテレータへの参照
+		*/
+		Const_Iterator& operator--()  { 
+			assert(m_node != nullptr);
+			m_node = m_node->m_prev;
+			return *this;
+		}
+
+		/**
+		* @brief 後置インクリメント演算子
+		* @return 更新前のイテレータへの参照
+		*/
+		Const_Iterator operator++(int) {
+			assert(m_node != nullptr);
+			Const_Iterator temp = *this;
+			++(*this);
+			return temp;
+		}
+
+		/**
+		* @brief 後置インクリメント演算子
+		* @return 更新前のイテレータへの参照
+		*/
+		Const_Iterator operator--(int) { 
+			assert(m_node != nullptr);
+			Const_Iterator temp = *this;
+			--(*this);
+			return temp; 
+		}
+
+		/**
+		* @brief デリファレンス演算子
+		* @return  成績データの参照
+		*/
+		const Record& operator*() {
 			assert(m_node != nullptr);
 			return m_node->m_record;
 		}
+		/**
+		 * @brief 2つの Const_Iterator イテレータを比較する
+		 * @param ite 比較対象の Const_Iterator
+		 * @return 2つのイテレータが同じ要素を指している場合に true を返す
+		 */
 		bool operator==(const Const_Iterator& ite) const { return m_node == ite.m_node; }
+
+		/**
+		* @brief 2つの Const_Iterator イテレータを比較する
+		* @param ite 比較対象の Const_Iterator
+		* @return 2つのイテレータが異なる要素を指している場合に true を返す
+		*/
 		bool operator!=(const Const_Iterator& ite) const { return m_node != ite.m_node; }
 	};
 
+	/**
+	* @brief Const_Iteratorを継承したIteratorクラス
+	*/
 	class Iterator : public Const_Iterator
 	{
 	public:
-		Iterator(Node* node) : Const_Iterator(node) {}
+		/**
+		* @brief デフォルトコンストラクタ
+		*/
+		Iterator() : Const_Iterator() {}
+
+		/**
+		* @brief 引数付きコンストラクタ
+		* @param node ノードを指定するポインタ
+		* @param list イテレータの所属しているリストの情報
+		*/
+		explicit Iterator(Node* node, const BidirectionalList* list) : Const_Iterator(node, list){}
+
+		/**
+		* @brief デリファレンス演算子
+		* @return m_node->m_record 成績データの参照
+		*/
 		Record& operator*() { 
 			assert(m_node != nullptr);
 			return m_node->m_record; }
 	};
 
+	/**
+	* @brief デフォルトコンストラクタ
+	*/
 	BidirectionalList();
+
+	/**
+	* @brief コピーの禁止を行う
+	*/
+	BidirectionalList(const BidirectionalList&) = delete;
+
+	/**
+	* @brief デストラクタ
+	*/
 	~BidirectionalList();
 
 	/**
-	* @fn int GetSize
 	* @brief リストのサイズを返す
-	* @details constメソッド
+	* @return int リストのサイズ
 	*/
 	int GetSize() const;
 
 
 	/**
-	* @fn bool Insert
 	* @brief イテレータで指定された位置にデータを挿入
-	* @param[in]  イテレータ, 成績情報
-	* @param[out] 挿入で来たかどうか
-	* @return bool 挿入結果
+	* @param ite 挿入する位置を指定したイテレータ
+	* @param rec 成績情報
+	* @param score スコア
+	* @param userName ユーザー名
+	* @return 挿入が成功した場合 true、 失敗した場合 false
 	*/
 	bool Insert(Const_Iterator& ite, const Record& rec);
 
 
 	/**
-	* @fn bool Delete
 	* @brief イテレータで指定位置のデータを削除
-	* @param[in]  イテレータ
-	* @param[out] 削除で来たかどうか
-	* @return bool 削除結果
+	* @param[in]  削除する位置を指定したイテレータ
+	* @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 	*/
 	bool Delete(Const_Iterator& ite);		
 
 
 	/**
-	* @fn Iterator Begi
 	* @brief 先頭イテレータを返す
-	* @param[out] 先頭イテレータ
 	* @return Iterator 先頭イテレータ
-	* @details constメソッド
 	*/
 	Iterator Begin() const;	
 
 
 	/**
-	* @fn Iterator Begi
 	* @brief 先頭のconstイテレータを返す
-	* @param[out] 先頭constイテレータ
 	* @return ConstIterato 先頭constイテレータ
-	* @details constメソッド
 	*/
 	Const_Iterator ConstBegin() const;	
 
 
 	/**
-	* @fn Iterator Begi
 	* @brief 末尾イテレータを返す
-	* @param[out] 末尾イテレータ
 	* @return Iterator 末尾イテレータ
-	* @details constメソッド
 	*/
 	Iterator End() const;
 
 
 	/**
-	* @fn Iterator Begi
 	* @brief 先頭のconstイテレータを返す
-	* @param[out] 末尾constイテレータ
 	* @return ConstIterator 末尾constイテレータ
-	* @details constメソッド
 	*/
 	Const_Iterator ConstEnd() const;					
 };
-
 #endif

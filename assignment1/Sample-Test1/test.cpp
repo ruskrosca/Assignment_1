@@ -128,7 +128,7 @@ namespace ex01_DataStructure
 			BidirectionalList::Iterator ite = list.Begin();
 			// データの挿入
 			list.Insert(ite, rec);
-			BidirectionalList::Iterator it = nullptr;
+			BidirectionalList::Iterator it;
 			// データを削除
 			list.Delete(it);
 			EXPECT_EQ(1, list.GetSize());
@@ -379,13 +379,12 @@ namespace ex01_DataStructure
 		TEST(Add, AddToNullList)
 		{
 			BidirectionalList list;
-			BidirectionalList list2;
-			BidirectionalList::Iterator it = list.Begin();	
-			BidirectionalList::Iterator it2 = list2.Begin();
+			BidirectionalList::Iterator it;
 			BidirectionalList::Record rec = { "1", "a" };
-			list2.Insert(it2, rec);
-			// 別リストの情報を渡す
-			EXPECT_FALSE(list2.Delete(it));
+			list.Insert(it, rec);
+
+			// リストの参照が無いイテレータを渡す
+			EXPECT_EQ(0, list.GetSize());
 		}
 
 		/**********************************************************************************//**
@@ -600,10 +599,11 @@ namespace ex01_DataStructure
 		{
 			BidirectionalList list;
 			BidirectionalList::Record record1 = { "1","a" };
-			BidirectionalList::Iterator it = nullptr;
+			BidirectionalList::Iterator it;
 
 			list.Insert(it, record1);
-
+			// 別リストの情報を渡す
+			EXPECT_FALSE(list.Delete(it));
 		}
 
 		/**********************************************************************************//**
@@ -1524,24 +1524,13 @@ namespace ex01_DataStructure
 			++ite;
 			BidirectionalList::Record rec2 = { "2", "b" };
 			list.Insert(ite, rec2);
-			BidirectionalList::Record rec3 = { "3", "c" };
-			list.Insert(ite, rec3);
 			ite = list.Begin();
-			BidirectionalList::Record beforRec = *ite;
 			++ite;
-			BidirectionalList::Record beforRec2 = *ite;
-			++ite;
-			BidirectionalList::Record beforRec3 = *ite;
-			++ite;
+			BidirectionalList::Record rec3 = *++ite;
+			BidirectionalList::Record rec4 = *ite;
 
-			if (beforRec.score == rec.score && beforRec.userName == rec.userName &&
-				beforRec2.score == rec2.score && beforRec2.userName == rec2.userName &&
-				beforRec3.score == rec3.score && beforRec3.userName == rec3.userName)
-			{
-				result = true;
-			}
 
-			EXPECT_EQ(true, result);
+			EXPECT_TRUE(rec3.score == rec4.score);
 		}
 
 		/**********************************************************************************//**
@@ -1562,24 +1551,12 @@ namespace ex01_DataStructure
 			ite++;
 			BidirectionalList::Record rec2 = { "2", "b" };
 			list.Insert(ite, rec2);
-			BidirectionalList::Record rec3 = { "3", "c" };
-			list.Insert(ite, rec3);
 			ite = list.Begin();
-			BidirectionalList::Record beforRec = *ite;
 			ite++;
-			BidirectionalList::Record beforRec2 = *ite;
-			ite++;
-			BidirectionalList::Record beforRec3 = *ite;
-			ite++;
+			BidirectionalList::Record rec3 = *ite++;
+			BidirectionalList::Record rec4 = *ite;
 
-			if (beforRec.score == rec.score && beforRec.userName == rec.userName &&
-				beforRec2.score == rec2.score && beforRec2.userName == rec2.userName &&
-				beforRec3.score == rec3.score && beforRec3.userName == rec3.userName)
-			{
-				result = true;
-			}
-
-			EXPECT_EQ(true, result);
+			EXPECT_TRUE(rec3.score != rec4.score);
 		}
 
 		/**********************************************************************************//**
@@ -1691,26 +1668,10 @@ namespace ex01_DataStructure
 			list.Insert(ite, rec2);
 			ite = list.End();
 			--ite;
-			--ite;
-			BidirectionalList::Record rec3 = { "3", "c" };
-			list.Insert(ite, rec3);
-			ite = list.End();
-			--ite;
-			BidirectionalList::Record beforRec = *ite;
-			--ite;
-			BidirectionalList::Record beforRec2 = *ite;
-			--ite;
-			BidirectionalList::Record beforRec3 = *ite;
+			BidirectionalList::Record rec3 = *--ite;
+			BidirectionalList::Record rec4 = *ite;
 
-
-			if (beforRec.score == rec.score && beforRec.userName == rec.userName &&
-				beforRec2.score == rec2.score && beforRec2.userName == rec2.userName &&
-				beforRec3.score == rec3.score && beforRec3.userName == rec3.userName)
-			{
-				result = true;
-			}
-
-			EXPECT_EQ(true, result);
+			EXPECT_TRUE(rec3.score == rec4.score);
 		}
 
 		/**********************************************************************************//**
@@ -1731,28 +1692,14 @@ namespace ex01_DataStructure
 			ite--;
 			BidirectionalList::Record rec2 = { "2", "b" };
 			list.Insert(ite, rec2);
-			ite = list.End();
-			ite--;
-			ite--;
-			BidirectionalList::Record rec3 = { "3", "c" };
-			list.Insert(ite, rec3);
 
 			ite = list.End();
 			ite--;
-			BidirectionalList::Record beforRec = *ite;
-			ite--;
-			BidirectionalList::Record beforRec2 = *ite;
-			ite--;
-			BidirectionalList::Record beforRec3 = *ite;
+			BidirectionalList::Record rec3 = *ite--;
+			BidirectionalList::Record rec4 = *ite;
 
-			if (beforRec.score == rec.score && beforRec.userName == rec.userName &&
-				beforRec2.score == rec2.score && beforRec2.userName == rec2.userName &&
-				beforRec3.score == rec3.score && beforRec3.userName == rec3.userName)
-			{
-				result = true;
-			}
 
-			EXPECT_EQ(true, result);
+			EXPECT_TRUE(rec3.score != rec4.score);
 		}
 
 		/**********************************************************************************//**
@@ -1946,7 +1893,6 @@ namespace ex01_DataStructure
 			it2 = list2.Begin();
 
 			EXPECT_TRUE(it1 != it2);
-
 		}
 	}
 }
