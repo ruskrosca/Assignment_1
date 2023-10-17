@@ -39,7 +39,7 @@ int main()
 		if (istring >> score >> userName)
 		{
 			// ƒŠƒXƒg‚ÉŠi”[
-			BidirectionalList::Record rec = { score, userName };
+			Record rec = { score, userName };
 			bidirectionalList.Insert(it, rec);
 			it = bidirectionalList.End();
 		}

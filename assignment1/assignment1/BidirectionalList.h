@@ -13,22 +13,21 @@
 using namespace std;
 
 /**
+* @brief 成績データ
+*/
+struct Record
+{
+	//! スコア
+	std::string score;
+	//! ユーザー名
+	std::string userName;
+};
+
+/**
 * @brief 双方向リストクラス
 */
 class BidirectionalList
 {
-public:
-	/**
-	* @brief 成績データ
-	*/
-	struct Record
-	{
-		//! スコア
-		std::string score;     
-		//! ユーザー名
-		std::string userName;  
-	};
-
 private:
 	/**
 	* @brief リスト内の要素

@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="BidirectionalList.h" />
     <ClInclude Include="Param.h" />
+    <ClInclude Include="Template.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
