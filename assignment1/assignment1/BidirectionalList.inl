@@ -107,8 +107,11 @@ inline bool BidirectionalList<Record>::Const_Iterator::operator!=(const Const_It
 /**
 * @brief デフォルトコンストラクタ
 */
+
+
 template<typename Record>
-inline BidirectionalList<Record>::Iterator::Iterator(){}
+inline BidirectionalList<Record>::Iterator::Iterator()
+	: Const_Iterator(){}
 
 /**
 * @brief 引数付きコンストラクタ
@@ -147,7 +150,7 @@ inline BidirectionalList<Record>::BidirectionalList()
 /**
 * @brief デストラクタ
 */
-//template<typename Record>
+template<typename Record>
 inline BidirectionalList<Record>::~BidirectionalList()
 {
 	Node* current = m_dummyNode->m_next;

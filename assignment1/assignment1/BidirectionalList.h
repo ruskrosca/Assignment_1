@@ -136,7 +136,7 @@ public:
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
-		inline Iterator() : Const_Iterator();
+		inline Iterator() ;
 
 		/**
 		* @brief 引数付きコンストラクタ
