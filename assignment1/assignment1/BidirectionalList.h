@@ -117,14 +117,14 @@ public:
 		 * @param ite 比較対象の Const_Iterator
 		 * @return 2つのイテレータが同じ要素を指している場合に true を返す
 		 */
-		inline bool operator==(const Const_Iterator& ite) const { return m_node == ite.m_node; }
+		inline bool operator==(const Const_Iterator& ite) const;
 
 		/**
 		* @brief 2つの Const_Iterator イテレータを比較する
 		* @param ite 比較対象の Const_Iterator
 		* @return 2つのイテレータが異なる要素を指している場合に true を返す
 		*/
-		inline bool operator!=(const Const_Iterator& ite) const { return m_node != ite.m_node; }
+		inline bool operator!=(const Const_Iterator& ite) const;
 	};
 
 	/**
@@ -136,22 +136,20 @@ public:
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
-		Iterator() : Const_Iterator() {}
+		inline Iterator() : Const_Iterator();
 
 		/**
 		* @brief 引数付きコンストラクタ
 		* @param node ノードを指定するポインタ
 		* @param list イテレータの所属しているリストの情報
 		*/
-		explicit Iterator(Node* node, const BidirectionalList* list) : Const_Iterator(node, list){}
+		inline explicit Iterator(Node* node, const BidirectionalList* list);
 
 		/**
 		* @brief デリファレンス演算子
 		* @return m_node->m_record 成績データの参照
 		*/
-		Record& operator*() { 
-			assert(Const_Iterator::m_node != nullptr);
-			return Const_Iterator::m_node->m_record; }
+		inline Record& operator*();
 	};
 
 	/**

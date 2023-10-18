@@ -83,6 +83,55 @@ inline const Record & BidirectionalList<Record>::Const_Iterator::operator*()
 }
 
 /**
+* @brief 2つの Const_Iterator イテレータを比較する
+* @param ite 比較対象の Const_Iterator
+* @return 2つのイテレータが同じ要素を指している場合に true を返す
+*/
+template<typename Record>
+inline bool BidirectionalList<Record>::Const_Iterator::operator==(const Const_Iterator & ite) const
+{
+	return m_node == ite.m_node;
+}
+
+/**
+* @brief 2つの Const_Iterator イテレータを比較する
+* @param ite 比較対象の Const_Iterator
+* @return 2つのイテレータが異なる要素を指している場合に true を返す
+*/
+template<typename Record>
+inline bool BidirectionalList<Record>::Const_Iterator::operator!=(const Const_Iterator & ite) const
+{
+	return m_node != ite.m_node;
+}
+
+/**
+* @brief デフォルトコンストラクタ
+*/
+template<typename Record>
+inline BidirectionalList<Record>::Iterator::Iterator(){}
+
+/**
+* @brief 引数付きコンストラクタ
+* @param node ノードを指定するポインタ
+* @param list イテレータの所属しているリストの情報
+*/
+template<typename Record>
+inline BidirectionalList<Record>::Iterator::Iterator(Node * node, const BidirectionalList * list)
+	: Const_Iterator(node, list) {}
+
+/**
+* @brief デリファレンス演算子
+* @return m_node->m_record 成績データの参照
+*/
+template<typename Record>
+inline Record & BidirectionalList<Record>::Iterator::operator*()
+{
+	assert(Const_Iterator::m_node != nullptr);
+	return Const_Iterator::m_node->m_record;
+}
+
+
+/**
 * @brief デフォルトコンストラクタ
 */
 template<typename Record>
