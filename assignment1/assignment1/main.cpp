@@ -22,10 +22,10 @@ int main()
 		return 1;
 	}
 
-	BidirectionalList bidirectionalList;
+	BidirectionalList<Record> bidirectionalList;
 	string line;
 
-	BidirectionalList::Iterator it = bidirectionalList.Begin();
+	BidirectionalList<Record>::Iterator it = bidirectionalList.Begin();
 
 	// 1çsÇ∏Ç¬ì«Ç›çûÇﬁ
 	while (getline(scoreFile, line))
@@ -47,7 +47,7 @@ int main()
 	scoreFile.close();
 
 	// ï\é¶
-	for (BidirectionalList::Iterator it = bidirectionalList.Begin(); it != bidirectionalList.End(); ++it)
+	for (BidirectionalList<Record>::Iterator it = bidirectionalList.Begin(); it != bidirectionalList.End(); ++it)
 	{
 		cout << (*it).score << " " << (*it).userName << endl;
 	}

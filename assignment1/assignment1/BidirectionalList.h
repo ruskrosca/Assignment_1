@@ -23,9 +23,11 @@ struct Record
 	std::string userName;
 };
 
+
 /**
 * @brief 双方向リストクラス
 */
+template<typename Record> 
 class BidirectionalList
 {
 private:
@@ -41,7 +43,13 @@ private:
 		//! 前のノードへのポインタ
 		Node* m_prev;     
 
-		explicit Node(const Record& rec) : m_record(rec), m_next(nullptr), m_prev(nullptr) {}
+		/**
+		* @brief 引数付きコンストラクタ
+		* @param rec 成績データ 
+		* @param score スコア
+		* @param userName ユーザー名
+		*/
+		inline explicit Node(const Record& rec);
 	};
 
 	//! ダミーノード
@@ -66,78 +74,57 @@ public:
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
-		Const_Iterator() : m_node(nullptr), m_list(nullptr) {}
+		inline Const_Iterator();
 
 		/**
 		* @brief 引数付きコンストラクタ
 		* @param node ノードを指定するポインタ
 		* @param list イテレータの所属しているリストの情報
 		*/
-		explicit Const_Iterator(Node* node, const BidirectionalList* list) : m_node(node), m_list(list){}
+		inline explicit Const_Iterator(Node* node, const BidirectionalList* list);
 
 		/**
 		* @brief 前置インクリメント演算子
 		* @return 更新後のイテレータへの参照
 		*/
-		Const_Iterator& operator++()  { 
-			assert(m_node != nullptr);
-			m_node = m_node->m_next;
-			return *this;
-		}
+		inline Const_Iterator& operator++();
 
 		/**
 		* @brief 前置デクリメント演算子
 		* @return 更新後のイテレータへの参照
 		*/
-		Const_Iterator& operator--()  { 
-			assert(m_node != nullptr);
-			m_node = m_node->m_prev;
-			return *this;
-		}
+		inline Const_Iterator& operator--();
 
 		/**
 		* @brief 後置インクリメント演算子
 		* @return 更新前のイテレータへの参照
 		*/
-		Const_Iterator operator++(int) {
-			assert(m_node != nullptr);
-			Const_Iterator temp = *this;
-			++(*this);
-			return temp;
-		}
+		inline Const_Iterator operator++(int);
 
 		/**
-		* @brief 後置インクリメント演算子
+		* @brief 後置デクリメント演算子
 		* @return 更新前のイテレータへの参照
 		*/
-		Const_Iterator operator--(int) { 
-			assert(m_node != nullptr);
-			Const_Iterator temp = *this;
-			--(*this);
-			return temp; 
-		}
+		inline Const_Iterator operator--(int);
 
 		/**
 		* @brief デリファレンス演算子
 		* @return  成績データの参照
 		*/
-		const Record& operator*() {
-			assert(m_node != nullptr);
-			return m_node->m_record;
-		}
+		inline const Record& operator*();
 		/**
 		 * @brief 2つの Const_Iterator イテレータを比較する
 		 * @param ite 比較対象の Const_Iterator
 		 * @return 2つのイテレータが同じ要素を指している場合に true を返す
 		 */
-		bool operator==(const Const_Iterator& ite) const { return m_node == ite.m_node; }
+		inline bool operator==(const Const_Iterator& ite) const { return m_node == ite.m_node; }
 
 		/**
 		* @brief 2つの Const_Iterator イテレータを比較する
 		* @param ite 比較対象の Const_Iterator
 		* @return 2つのイテレータが異なる要素を指している場合に true を返す
 		*/
-		bool operator!=(const Const_Iterator& ite) const { return m_node != ite.m_node; }
+		inline bool operator!=(const Const_Iterator& ite) const { return m_node != ite.m_node; }
 	};
 
 	/**
@@ -163,30 +150,30 @@ public:
 		* @return m_node->m_record 成績データの参照
 		*/
 		Record& operator*() { 
-			assert(m_node != nullptr);
-			return m_node->m_record; }
+			assert(Const_Iterator::m_node != nullptr);
+			return Const_Iterator::m_node->m_record; }
 	};
 
 	/**
 	* @brief デフォルトコンストラクタ
 	*/
-	BidirectionalList();
+	inline BidirectionalList();
 
 	/**
 	* @brief コピーの禁止を行う
 	*/
-	BidirectionalList(const BidirectionalList&) = delete;
+	inline BidirectionalList(const BidirectionalList&) = delete;
 
 	/**
 	* @brief デストラクタ
 	*/
-	~BidirectionalList();
+	inline ~BidirectionalList();
 
 	/**
 	* @brief リストのサイズを返す
 	* @return int リストのサイズ
 	*/
-	int GetSize() const;
+	inline int GetSize() const;
 
 
 	/**
@@ -197,7 +184,7 @@ public:
 	* @param userName ユーザー名
 	* @return 挿入が成功した場合 true、 失敗した場合 false
 	*/
-	bool Insert(Const_Iterator& ite, const Record& rec);
+	inline bool Insert(Const_Iterator& ite, const Record& rec);
 
 
 	/**
@@ -205,34 +192,38 @@ public:
 	* @param[in]  削除する位置を指定したイテレータ
 	* @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 	*/
-	bool Delete(Const_Iterator& ite);		
+	inline bool Delete(Const_Iterator& ite);
 
 
 	/**
 	* @brief 先頭イテレータを返す
 	* @return Iterator 先頭イテレータ
 	*/
-	Iterator Begin() const;	
+	inline Iterator Begin() const;
 
 
 	/**
 	* @brief 先頭のconstイテレータを返す
 	* @return ConstIterato 先頭constイテレータ
 	*/
-	Const_Iterator ConstBegin() const;	
+	inline Const_Iterator ConstBegin() const;
 
 
 	/**
 	* @brief 末尾イテレータを返す
 	* @return Iterator 末尾イテレータ
 	*/
-	Iterator End() const;
+	inline Iterator End() const;
 
 
 	/**
 	* @brief 先頭のconstイテレータを返す
 	* @return ConstIterator 末尾constイテレータ
 	*/
-	Const_Iterator ConstEnd() const;					
+	inline Const_Iterator ConstEnd() const;
+
 };
+#include "BidirectionalList.inl"
 #endif
+
+

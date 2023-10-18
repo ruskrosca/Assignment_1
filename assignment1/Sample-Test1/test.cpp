@@ -23,7 +23,7 @@ namespace ex01_DataStructure
 						データ数が0であれば成功です。\n
 		*//***********************************************************************************/
 		TEST(DataNum, NullList) {
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			EXPECT_EQ(0, list.GetSize());
 		}
 
@@ -35,9 +35,9 @@ namespace ex01_DataStructure
 						データ数が1であれば成功です。\n
 		*//***********************************************************************************/
 		TEST(DataNum, InsertBackSuccess) {
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 
 			list.Insert(ite, rec);
 			EXPECT_EQ(1, list.GetSize());
@@ -69,9 +69,9 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(DataNum, DataAddSuccess)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 
 			list.Insert(ite, rec);
 			EXPECT_EQ(1, list.GetSize());
@@ -99,13 +99,13 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(DataNum, DatadeleteSaccess)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			// データの挿入
 			list.Insert(ite, rec);
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			list.Delete(it);
 
 			EXPECT_EQ(0, list.GetSize());
@@ -123,12 +123,12 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(DataNum, DataDeleteFail)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			// データの挿入
 			list.Insert(ite, rec);
-			BidirectionalList::Iterator it;
+			BidirectionalList<Record>::Iterator it;
 			// データを削除
 			list.Delete(it);
 			EXPECT_EQ(1, list.GetSize());
@@ -145,8 +145,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(DataNum, DeleteToNulList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			// 空リストの中を削除
 			EXPECT_FALSE(list.Delete(it));
 			EXPECT_EQ(0, list.GetSize());
@@ -164,7 +164,7 @@ namespace ex01_DataStructure
 		{
 #define TT_TET_GETDATA_NUM_WHEN_CONST
 #if defined TT_TET_GETDATA_NUM_WHEN_CONST
-			const BidirectionalList list;
+			const BidirectionalList<Record> list;
 			EXPECT_EQ(0, list.GetSize());
 #endif // defined TT_TET_GETDATA_NUM_WHEN_CONST
 			SUCCEED();
@@ -181,14 +181,14 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(Add, InsertToNulList)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			EXPECT_EQ(true, list.Insert(ite, rec));
 
-			BidirectionalList list2;
+			BidirectionalList<Record> list2;
 			Record rec2 = { "1", "a" };
-			BidirectionalList::Iterator ite2 = list.End();
+			BidirectionalList<Record>::Iterator ite2 = list.End();
 			EXPECT_EQ(true, list.Insert(ite2, rec));
 
 		}
@@ -203,9 +203,9 @@ namespace ex01_DataStructure
 		TEST(Add, SetHeadIteratortoList)
 		{
 			// データ挿入
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			list.Insert(it, rec);
 			it = list.Begin();
 			Record rec2 = { "2", "b" };
@@ -215,7 +215,7 @@ namespace ex01_DataStructure
 			list.Insert(it, rec3);
 
 			// 先頭要素の入れ替わりが発生したか確認
-			BidirectionalList::Iterator it2 = list.Begin();
+			BidirectionalList<Record>::Iterator it2 = list.Begin();
 			it2 = list.Begin();
 			EXPECT_TRUE((*it2).score == "3");
 			EXPECT_TRUE((*it2).userName == "c");
@@ -238,9 +238,9 @@ namespace ex01_DataStructure
 		TEST(Add, SetTailIteratortoList)
 		{
 			// データの挿入
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record rec = { "1", "a" };
-			BidirectionalList::Iterator it = list.End();
+			BidirectionalList<Record>::Iterator it = list.End();
 			list.Insert(it, rec);
 			it = list.End();
 			--it;
@@ -279,11 +279,11 @@ namespace ex01_DataStructure
 		TEST(Add, SetIteratortoList)
 		{
 			// データ挿入
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record record1 = { "1", "a" };
 			Record record2 = { "2", "b" };
 			Record record3 = { "3", "c" };
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			// 先頭
 			list.Insert(it, record1);
 			it = list.Begin();
@@ -306,7 +306,7 @@ namespace ex01_DataStructure
 			list.Insert(it, record3);
 
 			// 整列順を確認
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			EXPECT_EQ((*ite).score, "1");
 			EXPECT_EQ((*ite).userName, "a");
 
@@ -330,11 +330,11 @@ namespace ex01_DataStructure
 
 		TEST(Add, InsertToConst)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record record1 = { "1", "a" };
 			Record record2 = { "2", "b" };
 			Record record3 = { "3", "c" };
-			BidirectionalList::Const_Iterator cite = list.ConstBegin();
+			BidirectionalList<Record>::Const_Iterator cite = list.ConstBegin();
 			// 先頭データの挿入
 			list.Insert(cite, record1);
 			cite = list.ConstBegin();
@@ -378,8 +378,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(Add, AddToNullList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it;
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it;
 			Record rec = { "1", "a" };
 			// リストの参照が無いイテレータを渡す
 			EXPECT_EQ(false, list.Insert(it, rec));
@@ -418,13 +418,13 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(Delete, DeleteBackFromEmptyList)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 
 			// リストが空か
 			EXPECT_EQ(list.GetSize(), 0);
 
 			// 何も起こらないか
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			EXPECT_EQ(list.Delete(ite), false);
 
 			ite = list.End();
@@ -443,8 +443,8 @@ namespace ex01_DataStructure
 		TEST(Delete, SetIteratorFrontFromlist)
 		{
 			//データの挿入
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 
@@ -474,8 +474,8 @@ namespace ex01_DataStructure
 		TEST(Delete, SetIteratorTailFromlist)
 		{
 			// データ挿入
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(it, rec);
 
@@ -485,7 +485,7 @@ namespace ex01_DataStructure
 			list.Insert(it, rec2);
 
 			// 末尾データを削除(ダミーノードを削除)
-			BidirectionalList::Iterator ite = list.End();
+			BidirectionalList<Record>::Iterator ite = list.End();
 			EXPECT_EQ(false, list.Delete(ite));
 		}
 
@@ -499,11 +499,11 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(Delete, SetIteratorFromlist)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record record1 = { "1", "a" };
 			Record record2 = { "2", "b" };
 			Record record3 = { "3", "c" };
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			list.Insert(it, record1);
 			it = list.Begin();
 			++it;
@@ -514,7 +514,7 @@ namespace ex01_DataStructure
 
 			EXPECT_EQ(list.GetSize(), 3);
 
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			EXPECT_EQ((*ite).score, "1");
 			EXPECT_EQ((*ite).userName, "a");
 
@@ -550,11 +550,11 @@ namespace ex01_DataStructure
 
 		TEST(Delete, DeleteConstIterator)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record record1 = { "1", "a" };
 			Record record2 = { "2", "b" };
 			Record record3 = { "3", "c" };
-			BidirectionalList::Const_Iterator cite = list.ConstBegin();
+			BidirectionalList<Record>::Const_Iterator cite = list.ConstBegin();
 			list.Insert(cite, record1);
 			cite = list.Begin();
 			++cite;
@@ -595,9 +595,9 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(Delete, AddNullDelete)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 			Record record1 = { "1","a" };
-			BidirectionalList::Iterator it;
+			BidirectionalList<Record>::Iterator it;
 
 			list.Insert(it, record1);
 			// 別リストの情報を渡す
@@ -636,8 +636,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetHeadIterator, NullList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			EXPECT_EQ(list.Begin(), it);
 		}
 
@@ -650,8 +650,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetHeadIterator, CalloneElementList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 
@@ -671,8 +671,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetHeadIterator, CallTwoElementsList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -697,8 +697,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetHeadIterator, CalltoAfterAddData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -739,8 +739,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetHeadIterator, CalltoAfterDeleteData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -806,8 +806,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstHeadIterator, CallEmptyList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator it = list.ConstBegin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator it = list.ConstBegin();
 			EXPECT_EQ(list.ConstBegin(), it);
 		}
 
@@ -820,8 +820,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstHeadIterator, CalloneElementList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.ConstBegin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.ConstBegin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 
@@ -840,8 +840,8 @@ namespace ex01_DataStructure
 
 		TEST(GetConstHeadIterator, CallTweElementList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -866,8 +866,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstHeadIterator, CalltoAfterAddData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.ConstBegin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.ConstBegin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.ConstBegin();
@@ -911,8 +911,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstHeadIterator, CalltoAfterDeleteData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator cite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator cite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(cite, record1);
 			cite = list.Begin();
@@ -960,8 +960,8 @@ namespace ex01_DataStructure
 		{
 #define TT_TET_GETDATA_NUM_WHEN_CONST
 #if defined TT_TET_GETDATA_NUM_WHEN_CONST
-			const BidirectionalList list;
-			BidirectionalList::Const_Iterator cit = list.ConstBegin();
+			const BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator cit = list.ConstBegin();
 
 #endif // defined TT_TET_GETDATA_NUM_WHEN_CONST
 			SUCCEED();
@@ -976,8 +976,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetTailIterator, NullList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.End();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.End();
 			EXPECT_EQ(list.End(), it);
 		}
 
@@ -990,8 +990,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetTailIterator, CalloneElementList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -1012,8 +1012,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetTailIterator, CallTwoElementsList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -1039,8 +1039,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetTailIterator, CalltoAfterAddData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -1083,8 +1083,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetTailIterator, CalltoAfterDeleteData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -1163,8 +1163,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstTailIterator, CallEmptyList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator it = list.ConstEnd();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator it = list.ConstEnd();
 			EXPECT_EQ(list.ConstEnd(), it);
 		}
 
@@ -1177,8 +1177,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstTailIterator, CalloneElementList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.ConstBegin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.ConstBegin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 
@@ -1197,8 +1197,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstTailIterator, CallTweElementList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.ConstBegin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.ConstBegin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -1225,8 +1225,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstTailIterator, CalltoAfterAddData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.ConstEnd();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.ConstEnd();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.ConstEnd();
@@ -1272,8 +1272,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetConstTailIterator, CalltoAfterDeleteData)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record record1 = { "1", "a" };
 			list.Insert(ite, record1);
 			ite = list.Begin();
@@ -1288,7 +1288,7 @@ namespace ex01_DataStructure
 			--ite;
 			list.Delete(ite);
 
-			BidirectionalList::Const_Iterator cite = list.ConstEnd();
+			BidirectionalList<Record>::Const_Iterator cite = list.ConstEnd();
 			--cite;
 			EXPECT_EQ((*cite).score, "3");
 			EXPECT_EQ((*cite).userName, "c");
@@ -1322,8 +1322,8 @@ namespace ex01_DataStructure
 		{
 #define TT_TET_GETDATA_NUM_WHEN_CONST
 #if defined TT_TET_GETDATA_NUM_WHEN_CONST
-			const BidirectionalList list;
-			BidirectionalList::Const_Iterator cit = list.ConstEnd();
+			const BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator cit = list.ConstEnd();
 
 #endif // defined TT_TET_GETDATA_NUM_WHEN_CONST
 			SUCCEED();
@@ -1340,7 +1340,7 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetElementToIterator, CalltoList)
 		{
-			BidirectionalList::Iterator it;
+			BidirectionalList<Record>::Iterator it;
 			EXPECT_DEATH((*it), ".*");
 		}
 
@@ -1353,8 +1353,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetElementToIterator, CallToNoList)
 		{
-			BidirectionalList List;
-			BidirectionalList::Iterator it = List.Begin();
+			BidirectionalList<Record> List;
+			BidirectionalList<Record>::Iterator it = List.Begin();
 			Record record = { "1","a" };
 			List.Insert(it, record);
 			it = List.Begin();
@@ -1399,8 +1399,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetElementToIterator, CallOnEmtyList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.Begin();
 			EXPECT_DEATH(*it,".*");
 		}
 
@@ -1413,8 +1413,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(GetElementToIterator, CalOnIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.End();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.End();
 
 			ASSERT_DEATH((*it), ".*");
 
@@ -1428,11 +1428,11 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToTailOfTheList, CalltoList)
 		{
-			BidirectionalList::Iterator it;
+			BidirectionalList<Record>::Iterator it;
 
 			ASSERT_DEATH({ ++it; }, ".*");
 
-			BidirectionalList::Iterator it2;
+			BidirectionalList<Record>::Iterator it2;
 
 			ASSERT_DEATH({ it2++; }, ".*");
 		}
@@ -1445,12 +1445,12 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToTailOfTheList, CallFirstIteratorWhenListIsEmpty)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.Begin();
 
 			ASSERT_DEATH({ ++it; }, ".*");
 
-			BidirectionalList::Iterator it2 = list.Begin();
+			BidirectionalList<Record>::Iterator it2 = list.Begin();
 
 			ASSERT_DEATH({ it2++; }, ".*");
 		}
@@ -1463,11 +1463,11 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToTailOfTheList, CallOnATailIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.End();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.End();
 			ASSERT_DEATH(++ite, ".*");
 
-			BidirectionalList::Iterator ite2 = list.End();
+			BidirectionalList<Record>::Iterator ite2 = list.End();
 			ASSERT_DEATH(ite2++, ".*");
 		}
 
@@ -1480,8 +1480,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToTailOfTheList, CallTwoElemtsList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 			ite = list.Begin();
@@ -1514,8 +1514,8 @@ namespace ex01_DataStructure
 		TEST(IteratorToTailOfTheList, PerformingAPreIncrement)
 		{
 			bool result = false;
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 			ite = list.Begin();
@@ -1541,8 +1541,8 @@ namespace ex01_DataStructure
 		TEST(IteratorToTailOfTheList, PostfixIncrementsArePerformed)
 		{
 			bool result = false;
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 			ite = list.Begin();
@@ -1565,11 +1565,11 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToHeadOfTheList, CalltoList)
 		{
-			BidirectionalList::Iterator it;
+			BidirectionalList<Record>::Iterator it;
 
 			ASSERT_DEATH({ --it; }, ".*");
 
-			BidirectionalList::Iterator it2;
+			BidirectionalList<Record>::Iterator it2;
 
 			ASSERT_DEATH({ it2--; }, ".*");
 		}
@@ -1582,12 +1582,12 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToHeadOfTheList, CallFirstIteratorWhenListIsEmpty)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator it = list.End();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator it = list.End();
 
 			ASSERT_DEATH({ --it; }, ".*");
 
-			BidirectionalList::Iterator it2 = list.End();
+			BidirectionalList<Record>::Iterator it2 = list.End();
 
 			ASSERT_DEATH({ it2--; }, ".*");
 		}
@@ -1600,12 +1600,12 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToHeadOfTheList, CallOnATailIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 
 			ASSERT_DEATH(--ite, ".*");
 
-			BidirectionalList::Iterator ite2 = list.Begin();
+			BidirectionalList<Record>::Iterator ite2 = list.Begin();
 
 			ASSERT_DEATH(ite2--, ".*");
 		}
@@ -1619,8 +1619,8 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(IteratorToHeadOfTheList, CallTwoElemtsList)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator ite = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator ite = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 			ite = list.Begin();
@@ -1656,8 +1656,8 @@ namespace ex01_DataStructure
 		TEST(IteratorToHeadOfTheList, PerformingAPreIncrement)
 		{
 			bool result = false;
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.End();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.End();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 			ite = list.End();
@@ -1682,8 +1682,8 @@ namespace ex01_DataStructure
 		TEST(IteratorToHeadOfTheList, PostfixIncrementsArePerformed)
 		{
 			bool result = false;
-			BidirectionalList list;
-			BidirectionalList::Const_Iterator ite = list.End();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Const_Iterator ite = list.End();
 			Record rec = { "1", "a" };
 			list.Insert(ite, rec);
 			ite = list.End();
@@ -1725,12 +1725,12 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(CopyIterator, CopyIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator origin = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator origin = list.Begin();
 			Record rec = { "1","a" };
 			list.Insert(origin, rec);
 			origin = list.Begin();
-			BidirectionalList::Iterator copyIt(origin);
+			BidirectionalList<Record>::Iterator copyIt(origin);
 			EXPECT_EQ((*origin).score, (*copyIt).score);
 			EXPECT_EQ((*origin).userName, (*origin).userName);
 		}
@@ -1761,13 +1761,13 @@ namespace ex01_DataStructure
 			*//***********************************************************************************/
 		TEST(AssignmentIterator, AsseignmentIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList::Iterator origin = list.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record>::Iterator origin = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(origin, rec);
 			origin = list.Begin();
 
-			BidirectionalList::Iterator assigned = origin;
+			BidirectionalList<Record>::Iterator assigned = origin;
 
 			EXPECT_EQ((*origin).score, (*assigned).score);
 			EXPECT_EQ((*origin).userName, (*assigned).userName);
@@ -1782,10 +1782,10 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(TwoIteratorIdenticalOrComparisons, FirstIteratorWithLastIteratorListIsEmpty)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 
-			BidirectionalList::Iterator beginIt = list.Begin();
-			BidirectionalList::Iterator endIt = list.End();
+			BidirectionalList<Record>::Iterator beginIt = list.Begin();
+			BidirectionalList<Record>::Iterator endIt = list.End();
 
 			EXPECT_TRUE(beginIt == endIt);
 
@@ -1800,14 +1800,14 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(TwoIteratorIdenticalOrComparisons, IdenticcalIterator)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 
-			BidirectionalList::Iterator it1 = list.Begin();
+			BidirectionalList<Record>::Iterator it1 = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(it1, rec);
 
 			it1 = list.Begin();
-			BidirectionalList::Iterator it2 = it1;
+			BidirectionalList<Record>::Iterator it2 = it1;
 
 			EXPECT_TRUE(it1 == it2);
 
@@ -1821,10 +1821,10 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(TwoIteratorIdenticalOrComparisons, DifferentIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList list2;
-			BidirectionalList::Iterator it1 = list.Begin();
-			BidirectionalList::Iterator it2 = list2.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record> list2;
+			BidirectionalList<Record>::Iterator it1 = list.Begin();
+			BidirectionalList<Record>::Iterator it2 = list2.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(it1, rec);
 			list2.Insert(it2, rec);
@@ -1842,10 +1842,10 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(TwoIteratorDifferentOrComparisons, FirstIteratorWithLastIteratorListIsEmpty)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 
-			BidirectionalList::Iterator beginIter = list.Begin();
-			BidirectionalList::Iterator endIter = list.End();
+			BidirectionalList<Record>::Iterator beginIter = list.Begin();
+			BidirectionalList<Record>::Iterator endIter = list.End();
 
 			EXPECT_FALSE(beginIter != endIter);
 		}
@@ -1858,14 +1858,14 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(TwoIteratorDifferentOrComparisons, IdenticcalIterator)
 		{
-			BidirectionalList list;
+			BidirectionalList<Record> list;
 
-			BidirectionalList::Iterator it1 = list.Begin();
+			BidirectionalList<Record>::Iterator it1 = list.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(it1, rec);
 
 			it1 = list.Begin();
-			BidirectionalList::Iterator it2 = it1;
+			BidirectionalList<Record>::Iterator it2 = it1;
 
 			EXPECT_FALSE(it1 != it2);
 
@@ -1879,10 +1879,10 @@ namespace ex01_DataStructure
 		*//***********************************************************************************/
 		TEST(TwoIteratorDifferentOrComparisons, DifferentIterator)
 		{
-			BidirectionalList list;
-			BidirectionalList list2;
-			BidirectionalList::Iterator it1 = list.Begin();
-			BidirectionalList::Iterator it2 = list2.Begin();
+			BidirectionalList<Record> list;
+			BidirectionalList<Record> list2;
+			BidirectionalList<Record>::Iterator it1 = list.Begin();
+			BidirectionalList<Record>::Iterator it2 = list2.Begin();
 			Record rec = { "1", "a" };
 			list.Insert(it1, rec);
 			list2.Insert(it2, rec);
