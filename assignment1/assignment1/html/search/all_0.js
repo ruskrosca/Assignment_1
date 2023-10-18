@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['begin_0',['Begin',['../class_bidirectional_list.html#a4a2c9c0bb5525ff5ff1b87eb1de6c5e8',1,'BidirectionalList']]],
-  ['bidirectionallist_1',['bidirectionallist',['../class_bidirectional_list.html',1,'BidirectionalList'],['../class_bidirectional_list.html#aceb147f3fd51ed77241565a7151ec911',1,'BidirectionalList::BidirectionalList()'],['../class_bidirectional_list.html#acb19f3af79d2810195244f70fb06b09a',1,'BidirectionalList::BidirectionalList(const BidirectionalList &amp;)=delete']]],
-  ['bidirectionallist_2ecpp_2',['BidirectionalList.cpp',['../_bidirectional_list_8cpp.html',1,'']]],
-  ['bidirectionallist_2eh_3',['BidirectionalList.h',['../_bidirectional_list_8h.html',1,'']]]
+  ['begin_0',['begin',['../class_bidirectional_list.html#ac844ebec71520cbd4a9ab6ef6ac34bb5',1,'BidirectionalList::Begin() const'],['../class_bidirectional_list.html#a8c5a52ff1e6d6e9283eebfa6ec6731ca',1,'BidirectionalList::begin() const']]],
+  ['bidirectionallist_1',['bidirectionallist',['../class_bidirectional_list.html',1,'BidirectionalList&lt; T &gt;'],['../class_bidirectional_list_1_1_const___iterator.html#a566f75b69910038aec4b88751d771985',1,'BidirectionalList::Const_Iterator::BidirectionalList'],['../class_bidirectional_list.html#a9033c350dcc690bf0eee253f5b644124',1,'BidirectionalList::BidirectionalList()'],['../class_bidirectional_list.html#a77230f145e29132058a9f002e7193bd8',1,'BidirectionalList::BidirectionalList(const BidirectionalList &amp;)=delete']]],
+  ['bidirectionallist_2eh_2',['BidirectionalList.h',['../_bidirectional_list_8h.html',1,'']]],
+  ['bidirectionallist_2einl_3',['BidirectionalList.inl',['../_bidirectional_list_8inl.html',1,'']]]
 ];

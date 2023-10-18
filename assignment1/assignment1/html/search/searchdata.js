@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "bcdegimoprsu~",
-  1: "bcipr",
-  2: "bmp",
-  3: "bcdegimop~",
-  4: "msu"
+  0: "bcdegimorsu~",
+  1: "bcir",
+  2: "bmr",
+  3: "bcdegimo~",
+  4: "su",
+  5: "b"
 };
 
 var indexSectionNames =
@@ -13,15 +14,17 @@ var indexSectionNames =
   1: "classes",
   2: "files",
   3: "functions",
-  4: "variables"
+  4: "variables",
+  5: "related"
 };
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Classes",
-  2: "Files",
-  3: "Functions",
-  4: "Variables"
+  0: "全て",
+  1: "クラス",
+  2: "ファイル",
+  3: "関数",
+  4: "変数",
+  5: "フレンド"
 };
 

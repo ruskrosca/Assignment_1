@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['operator_21_3d_0',['operator!=',['../class_bidirectional_list_1_1_const___iterator.html#a47ae73bef01b483b768e677abac03bf5',1,'BidirectionalList::Const_Iterator']]],
-  ['operator_2a_1',['operator*',['../class_bidirectional_list_1_1_const___iterator.html#aa5708cc471b7cfed36544a1074484960',1,'BidirectionalList::Const_Iterator::operator*()'],['../class_bidirectional_list_1_1_iterator.html#a0c0a046041243da1b93c58f6d0cbf835',1,'BidirectionalList::Iterator::operator*()']]],
-  ['operator_2b_2b_2',['operator++',['../class_bidirectional_list_1_1_const___iterator.html#a80d59ba268529cd1ea1af9ef2dd2fb24',1,'BidirectionalList::Const_Iterator::operator++()'],['../class_bidirectional_list_1_1_const___iterator.html#a05642faa9ad14ff163da472b104b0367',1,'BidirectionalList::Const_Iterator::operator++(int)']]],
-  ['operator_2d_2d_3',['operator--',['../class_bidirectional_list_1_1_const___iterator.html#a49d08b109ce4ff630e0df4c18db4d44b',1,'BidirectionalList::Const_Iterator::operator--()'],['../class_bidirectional_list_1_1_const___iterator.html#a19a355d9001aff76cfb4bdce25a9c2bd',1,'BidirectionalList::Const_Iterator::operator--(int)']]],
-  ['operator_3d_3d_4',['operator==',['../class_bidirectional_list_1_1_const___iterator.html#a1e392ab124be199b5d0c2c8d6c143eb7',1,'BidirectionalList::Const_Iterator']]]
+  ['operator_21_3d_0',['operator!=',['../class_bidirectional_list_1_1_const___iterator.html#af44bc244c3d1a132b6260f8877d8a650',1,'BidirectionalList::Const_Iterator']]],
+  ['operator_2a_1',['operator*',['../class_bidirectional_list_1_1_const___iterator.html#aaa2cbcc6349b4bc2965205661fdb1435',1,'BidirectionalList::Const_Iterator::operator*()'],['../class_bidirectional_list_1_1_iterator.html#a72dbfbccd0f60259f3236d20da52eb8c',1,'BidirectionalList::Iterator::operator*()']]],
+  ['operator_2b_2b_2',['operator++',['../class_bidirectional_list_1_1_const___iterator.html#a641efa489be53937f045097d0fe3947b',1,'BidirectionalList::Const_Iterator::operator++()'],['../class_bidirectional_list_1_1_const___iterator.html#a5ae90e24d2b16a743d92503383e81f89',1,'BidirectionalList::Const_Iterator::operator++(int)']]],
+  ['operator_2d_2d_3',['operator--',['../class_bidirectional_list_1_1_const___iterator.html#a95ce70b0c00ae5d82e5bdfa274f71869',1,'BidirectionalList::Const_Iterator::operator--()'],['../class_bidirectional_list_1_1_const___iterator.html#aaf93ecc73e20bf860c76ee77b7d6a4b9',1,'BidirectionalList::Const_Iterator::operator--(int)']]],
+  ['operator_3d_3d_4',['operator==',['../class_bidirectional_list_1_1_const___iterator.html#af6cb74f2b212e367908d1f7bc8157df6',1,'BidirectionalList::Const_Iterator']]]
 ];

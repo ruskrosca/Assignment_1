@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['insert_0',['Insert',['../class_bidirectional_list.html#a0a4fdb6cb7651d4f03fd89c3e10bd9f3',1,'BidirectionalList']]],
-  ['iterator_1',['iterator',['../class_bidirectional_list_1_1_iterator.html',1,'BidirectionalList::Iterator'],['../class_bidirectional_list_1_1_iterator.html#ace12624062081799353ec98ac1054927',1,'BidirectionalList::Iterator::Iterator()'],['../class_bidirectional_list_1_1_iterator.html#a3439864827ba196b428b63f4ceb9e001',1,'BidirectionalList::Iterator::Iterator(Node *node, const BidirectionalList *list)']]]
+  ['insert_0',['Insert',['../class_bidirectional_list.html#a7b43f9f74f4c1ddcae1cbd65519a7b45',1,'BidirectionalList']]],
+  ['iterator_1',['iterator',['../class_bidirectional_list_1_1_iterator.html',1,'BidirectionalList&lt; T &gt;::Iterator'],['../class_bidirectional_list_1_1_iterator.html#a5318d00c5dd08324b69d6490e0bce19a',1,'BidirectionalList::Iterator::Iterator()'],['../class_bidirectional_list_1_1_iterator.html#a343e88cd420d359504936d5a2945f265',1,'BidirectionalList::Iterator::Iterator(Node *node, const BidirectionalList *list)']]]
 ];

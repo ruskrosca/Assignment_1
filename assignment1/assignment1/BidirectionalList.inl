@@ -5,10 +5,17 @@
 *//***********************************************************************************/
 #include "BidirectionalList.h"
 
+/**
+* @brief コンストラクタ
+*/
 template<typename T>
 inline BidirectionalList<T>::Node::Node()
 	: m_data(), m_next(nullptr), m_prev(nullptr){}
 
+/**
+* @brief 引数付きコンストラクタ
+* @param data データ
+*/
 template<typename T>
 inline BidirectionalList<T>::Node::Node(const T & data)
 	: m_data(data), m_next(nullptr), m_prev(nullptr){}

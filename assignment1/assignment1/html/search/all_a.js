@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['score_0',['score',['../struct_bidirectional_list_1_1_record.html#afdb5ed64c19eb159c0147417ea8f4f77',1,'BidirectionalList::Record']]]
+  ['username_0',['userName',['../struct_record.html#a4bea2517bd184fa8230e75ecf4cecf1a',1,'Record']]]
 ];

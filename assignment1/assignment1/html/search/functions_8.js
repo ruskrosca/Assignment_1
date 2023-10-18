@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['param_0',['Param',['../class_param.html#a9befd6dbbc07a164159fc9afab348c50',1,'Param']]]
+  ['_7ebidirectionallist_0',['~BidirectionalList',['../class_bidirectional_list.html#a1cb4a7355170a7bd09998e40b4e3364e',1,'BidirectionalList']]]
 ];
