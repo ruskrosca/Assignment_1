@@ -5,16 +5,19 @@
 *//***********************************************************************************/
 #include "BidirectionalList.h"
 
-template<typename Record>
-inline BidirectionalList<Record>::Node::Node(const Record & rec)
-	: m_record(rec), m_next(nullptr), m_prev(nullptr)
-{}
+template<typename T>
+inline BidirectionalList<T>::Node::Node()
+	: m_data(), m_next(nullptr), m_prev(nullptr){}
+
+template<typename T>
+inline BidirectionalList<T>::Node::Node(const T & data)
+	: m_data(data), m_next(nullptr), m_prev(nullptr){}
 
 /**
 * @brief デフォルトコンストラクタ
 */
-template<typename Record>
-inline BidirectionalList<Record>::Const_Iterator::Const_Iterator()
+template<typename T>
+inline BidirectionalList<T>::Const_Iterator::Const_Iterator()
 	: m_node(nullptr), m_list(nullptr) {}
 
 /**
@@ -22,15 +25,16 @@ inline BidirectionalList<Record>::Const_Iterator::Const_Iterator()
 * @param node ノードを指定するポインタ
 * @param list イテレータの所属しているリストの情報
 */
-template<typename Record>
-inline BidirectionalList<Record>::Const_Iterator::Const_Iterator(Node * node, const BidirectionalList * list)
+template<typename T>
+inline BidirectionalList<T>::Const_Iterator::Const_Iterator(Node * node, const BidirectionalList * list)
 	: m_node(node), m_list(list) {}
 
 /**
 * @brief 前置インクリメント演算子
 * @return 更新後のイテレータへの参照
 */
-inline BidirectionalList<Record>::Const_Iterator & BidirectionalList<Record>::Const_Iterator::operator++()
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator & BidirectionalList<T>::Const_Iterator::operator++()
 {
 	assert(m_node != nullptr);
 	m_node = m_node->m_next;
@@ -41,7 +45,8 @@ inline BidirectionalList<Record>::Const_Iterator & BidirectionalList<Record>::Co
 * @brief 前置デクリメント演算子
 * @return 更新後のイテレータへの参照
 */
-inline BidirectionalList<Record>::Const_Iterator & BidirectionalList<Record>::Const_Iterator::operator--()
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator & BidirectionalList<T>::Const_Iterator::operator--()
 {
 	assert(m_node != nullptr);
 	m_node = m_node->m_prev;
@@ -52,7 +57,8 @@ inline BidirectionalList<Record>::Const_Iterator & BidirectionalList<Record>::Co
 * @brief 後置インクリメント演算子
 * @return 更新前のイテレータへの参照
 */
-inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::Const_Iterator::operator++(int)
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator BidirectionalList<T>::Const_Iterator::operator++(int)
 {
 	assert(m_node != nullptr);
 	Const_Iterator temp = *this;
@@ -64,7 +70,8 @@ inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::Cons
 * @brief 後置デクリメント演算子
 * @return 更新前のイテレータへの参照
 */
-inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::Const_Iterator::operator--(int)
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator BidirectionalList<T>::Const_Iterator::operator--(int)
 {
 	assert(m_node != nullptr);
 	Const_Iterator temp = *this;
@@ -76,10 +83,11 @@ inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::Cons
 * @brief デリファレンス演算子
 * @return  成績データの参照
 */
-inline const Record & BidirectionalList<Record>::Const_Iterator::operator*()
+template<typename T>
+inline const T & BidirectionalList<T>::Const_Iterator::operator*() const
 {
 	assert(m_node != nullptr);
-	return m_node->m_record;
+	return m_node->m_data;
 }
 
 /**
@@ -87,8 +95,8 @@ inline const Record & BidirectionalList<Record>::Const_Iterator::operator*()
 * @param ite 比較対象の Const_Iterator
 * @return 2つのイテレータが同じ要素を指している場合に true を返す
 */
-template<typename Record>
-inline bool BidirectionalList<Record>::Const_Iterator::operator==(const Const_Iterator & ite) const
+template<typename T>
+inline bool BidirectionalList<T>::Const_Iterator::operator==(const Const_Iterator & ite) const
 {
 	return m_node == ite.m_node;
 }
@@ -98,8 +106,8 @@ inline bool BidirectionalList<Record>::Const_Iterator::operator==(const Const_It
 * @param ite 比較対象の Const_Iterator
 * @return 2つのイテレータが異なる要素を指している場合に true を返す
 */
-template<typename Record>
-inline bool BidirectionalList<Record>::Const_Iterator::operator!=(const Const_Iterator & ite) const
+template<typename T>
+inline bool BidirectionalList<T>::Const_Iterator::operator!=(const Const_Iterator & ite) const
 {
 	return m_node != ite.m_node;
 }
@@ -107,10 +115,8 @@ inline bool BidirectionalList<Record>::Const_Iterator::operator!=(const Const_It
 /**
 * @brief デフォルトコンストラクタ
 */
-
-
-template<typename Record>
-inline BidirectionalList<Record>::Iterator::Iterator()
+template<typename T>
+inline BidirectionalList<T>::Iterator::Iterator()
 	: Const_Iterator(){}
 
 /**
@@ -118,29 +124,29 @@ inline BidirectionalList<Record>::Iterator::Iterator()
 * @param node ノードを指定するポインタ
 * @param list イテレータの所属しているリストの情報
 */
-template<typename Record>
-inline BidirectionalList<Record>::Iterator::Iterator(Node * node, const BidirectionalList * list)
+template<typename T>
+inline BidirectionalList<T>::Iterator::Iterator(Node * node, const BidirectionalList * list)
 	: Const_Iterator(node, list) {}
 
 /**
 * @brief デリファレンス演算子
-* @return m_node->m_record 成績データの参照
+* @return m_node->m_data 成績データの参照
 */
-template<typename Record>
-inline Record & BidirectionalList<Record>::Iterator::operator*()
+template<typename T>
+inline T & BidirectionalList<T>::Iterator::operator*()
 {
 	assert(Const_Iterator::m_node != nullptr);
-	return Const_Iterator::m_node->m_record;
+	return Const_Iterator::m_node->m_data;
 }
 
 
 /**
 * @brief デフォルトコンストラクタ
 */
-template<typename Record>
-inline BidirectionalList<Record>::BidirectionalList()
+template<typename T>
+inline BidirectionalList<T>::BidirectionalList()
 {
-	m_dummyNode = new Node(Record{ "", "" });
+	m_dummyNode = new Node();
 	m_dummyNode->m_next = m_dummyNode;
 	m_dummyNode->m_prev = m_dummyNode;
 	m_size = 0;
@@ -150,8 +156,8 @@ inline BidirectionalList<Record>::BidirectionalList()
 /**
 * @brief デストラクタ
 */
-template<typename Record>
-inline BidirectionalList<Record>::~BidirectionalList()
+template<typename T>
+inline BidirectionalList<T>::~BidirectionalList()
 {
 	Node* current = m_dummyNode->m_next;
 	// ダミーノードを指すまで回す
@@ -170,8 +176,8 @@ inline BidirectionalList<Record>::~BidirectionalList()
 * @brief リストのサイズを返す
 * @return int リストのサイズ
 */
-template<typename Record>
-inline int BidirectionalList<Record>::GetSize() const
+template<typename T>
+inline int BidirectionalList<T>::GetSize() const
 {
 	return m_size;
 }
@@ -179,18 +185,16 @@ inline int BidirectionalList<Record>::GetSize() const
 /**
 * @brief イテレータで指定された位置にデータを挿入
 * @param ite 挿入する位置を指定したイテレータ
-* @param rec 成績データ
-* @param score スコア
-* @param userName ユーザー名
-* @return 挿入が成功した場合 true、 失敗した場合(不正なイテレータの場合) false
+* @param data データ
+、 失敗した場合(不正なイテレータの場合) false
 */
-template<typename Record>
-inline bool BidirectionalList<Record>::Insert(Const_Iterator & ite, const Record & rec)
+template<typename T>
+inline bool BidirectionalList<T>::Insert(Const_Iterator & ite, const T & data)
 {
 	// 不正なイテレータを除外
 	if (ite.m_list != this) return false;
 
-	Node* newNode = new Node(rec);
+	Node* newNode = new Node(data);
 
 	// 空イテレータかどうかを確認
 	// 空ならダミーノードを、普通ならite.nodeを挿入
@@ -223,8 +227,8 @@ inline bool BidirectionalList<Record>::Insert(Const_Iterator & ite, const Record
 * @param[in]  削除する位置を指定したイテレータ
 * @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 */
-template<typename Record>
-inline bool BidirectionalList<Record>::Delete(Const_Iterator & ite)
+template<typename T>
+inline bool BidirectionalList<T>::Delete(Const_Iterator & ite)
 {
 	Node* nodeDelete = ite.m_node;
 
@@ -248,7 +252,28 @@ inline bool BidirectionalList<Record>::Delete(Const_Iterator & ite)
 * @brief 先頭イテレータを返す
 * @return bool 先頭イテレータ
 */
-inline BidirectionalList<Record>::Iterator BidirectionalList<Record>::Begin() const
+template<typename T>
+inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::Begin() const
+{
+	// リストが空じゃないか
+	if (m_dummyNode->m_next != m_dummyNode)
+	{
+		// 先頭イテレータを返す
+		return Iterator(m_dummyNode->m_next, this);
+	}
+	else
+	{
+		// 空の先頭イテレータを返す
+		return Iterator(nullptr, this);
+	}
+}
+
+/**
+* @brief 先頭イテレータを返す
+* @return Iterator 先頭イテレータ
+*/
+template<typename T>
+inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::begin() const
 {
 	// リストが空じゃないか
 	if (m_dummyNode->m_next != m_dummyNode)
@@ -267,7 +292,8 @@ inline BidirectionalList<Record>::Iterator BidirectionalList<Record>::Begin() co
 * @brief 先頭のconstイテレータを返す
 * @return ConstIterato 先頭constイテレータ
 */
-inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::ConstBegin() const
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator BidirectionalList<T>::ConstBegin() const
 {
 	// リストが空じゃないか
 	if (m_dummyNode->m_next != m_dummyNode)
@@ -286,7 +312,29 @@ inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::Cons
 * @brief 末尾イテレータを返す
 * @return Iterator 末尾イテレータ
 */
-inline BidirectionalList<Record>::Iterator BidirectionalList<Record>::End() const
+template<typename T>
+inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::End() const
+{
+	// リストが空じゃないか
+	if (m_dummyNode->m_prev != m_dummyNode)
+	{
+		// 末尾イテレータを返す
+		return Iterator(m_dummyNode, this);
+	}
+	else
+	{
+		// 空の末尾イテレータを返す
+		return Iterator(nullptr, this);
+	}
+}
+
+/**
+* @brief 末尾イテレータを返す
+* @return Iterator 末尾イテレータ
+* `
+*/
+template<typename T>
+inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::end() const
 {
 	// リストが空じゃないか
 	if (m_dummyNode->m_prev != m_dummyNode)
@@ -305,7 +353,8 @@ inline BidirectionalList<Record>::Iterator BidirectionalList<Record>::End() cons
 * @brief 末尾のconstイテレータを返す
 * @return ConstIterator 末尾constイテレータ
 */
-inline BidirectionalList<Record>::Const_Iterator BidirectionalList<Record>::ConstEnd() const
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator BidirectionalList<T>::ConstEnd() const
 {
 	// リストが空じゃないか
 	if (m_dummyNode->m_prev != m_dummyNode)

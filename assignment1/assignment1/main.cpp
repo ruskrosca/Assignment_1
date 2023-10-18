@@ -1,8 +1,15 @@
+/**********************************************************************************//**
+	@file           main.cpp
+	@brief          双方向リスト実践
+	@author			RyosukeNarsushima
+*//***********************************************************************************/
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <string>
 #include "BidirectionalList.h"
+#include "Record.h"
 
 
 using namespace std;
@@ -10,6 +17,10 @@ using namespace std;
 
 int main()
 {
+	// 実験用
+	//BidirectionalList<int> intList;
+	//BidirectionalList<float> floatList;
+
 	// ファイル読み込み
 	string fileName("Assets/Scores.txt");
 	ifstream scoreFile(fileName);
@@ -47,9 +58,9 @@ int main()
 	scoreFile.close();
 
 	// 表示
-	for (BidirectionalList<Record>::Iterator it = bidirectionalList.Begin(); it != bidirectionalList.End(); ++it)
+	for (const Record& rec: bidirectionalList)
 	{
-		cout << (*it).score << " " << (*it).userName << endl;
+		cout << rec.score << " " << rec.userName << endl;
 	}
 
 	getchar();

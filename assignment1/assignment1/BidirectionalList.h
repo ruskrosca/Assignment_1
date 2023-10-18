@@ -13,43 +13,36 @@
 using namespace std;
 
 /**
-* @brief 成績データ
-*/
-struct Record
-{
-	//! スコア
-	std::string score;
-	//! ユーザー名
-	std::string userName;
-};
-
-
-/**
 * @brief 双方向リストクラス
+* @tparam T テンプレート仮引数
 */
-template<typename Record> 
+template<typename T>
 class BidirectionalList
 {
+
 private:
 	/**
 	* @brief リスト内の要素
 	*/
 	struct Node
 	{
-		//! 成績データ
-		Record m_record; 
+		//! データ
+		T m_data;
 		//! 次のノードへのポインタ
-		Node* m_next;   
+		Node* m_next;
 		//! 前のノードへのポインタ
-		Node* m_prev;     
+		Node* m_prev;
+
+		/**
+		* @brief コンストラクタ
+		*/
+		inline explicit Node();
 
 		/**
 		* @brief 引数付きコンストラクタ
-		* @param rec 成績データ 
-		* @param score スコア
-		* @param userName ユーザー名
+		* @param data データ
 		*/
-		inline explicit Node(const Record& rec);
+		inline explicit Node(const T& data);
 	};
 
 	//! ダミーノード
@@ -64,13 +57,16 @@ public:
 	*/
 	class Const_Iterator
 	{
-	public:
+		friend class BidirectionalList;
+
+	private:
 		//! ノードを示すポインタ
 		Node* m_node;
 
 		//! リストのポインタ
 		const BidirectionalList* m_list;
 
+	public:
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
@@ -109,9 +105,9 @@ public:
 
 		/**
 		* @brief デリファレンス演算子
-		* @return  成績データの参照
+		* @return  データの参照
 		*/
-		inline const Record& operator*();
+		inline const T& operator*() const;
 		/**
 		 * @brief 2つの Const_Iterator イテレータを比較する
 		 * @param ite 比較対象の Const_Iterator
@@ -136,7 +132,7 @@ public:
 		/**
 		* @brief デフォルトコンストラクタ
 		*/
-		inline Iterator() ;
+		inline Iterator();
 
 		/**
 		* @brief 引数付きコンストラクタ
@@ -147,9 +143,9 @@ public:
 
 		/**
 		* @brief デリファレンス演算子
-		* @return m_node->m_record 成績データの参照
+		* @return m_node->m_record データの参照
 		*/
-		inline Record& operator*();
+		inline T& operator*();
 	};
 
 	/**
@@ -177,12 +173,10 @@ public:
 	/**
 	* @brief イテレータで指定された位置にデータを挿入
 	* @param ite 挿入する位置を指定したイテレータ
-	* @param rec 成績情報
-	* @param score スコア
-	* @param userName ユーザー名
+	* @param data データ
 	* @return 挿入が成功した場合 true、 失敗した場合 false
 	*/
-	inline bool Insert(Const_Iterator& ite, const Record& rec);
+	inline bool Insert(Const_Iterator& ite, const T& data);
 
 
 	/**
@@ -199,6 +193,11 @@ public:
 	*/
 	inline Iterator Begin() const;
 
+	/**
+	* @brief 先頭イテレータを返す
+	* @return Iterator 先頭イテレータ
+	*/
+	inline Iterator begin() const;
 
 	/**
 	* @brief 先頭のconstイテレータを返す
@@ -212,6 +211,13 @@ public:
 	* @return Iterator 末尾イテレータ
 	*/
 	inline Iterator End() const;
+
+	/**
+	* @brief 末尾イテレータを返す
+	* @return Iterator 末尾イテレータ
+	* @
+	*/
+	inline Iterator end() const;
 
 
 	/**
