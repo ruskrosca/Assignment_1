@@ -14,7 +14,7 @@ using namespace std;
 
 /**
 * @brief 双方向リストクラス
-* @tparam T テンプレート仮引数
+* @tparam T 任意のデータ型を指定できる
 */
 template<typename T>
 class BidirectionalList
@@ -185,7 +185,6 @@ public:
 	* @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 	*/
 	inline bool Delete(Const_Iterator& ite);
-
 
 	/**
 	* @brief 先頭イテレータを返す

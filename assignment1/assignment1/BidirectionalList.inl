@@ -282,17 +282,7 @@ inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::Begin() con
 template<typename T>
 inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::begin() const
 {
-	// リストが空じゃないか
-	if (m_dummyNode->m_next != m_dummyNode)
-	{
-		// 先頭イテレータを返す
-		return Iterator(m_dummyNode->m_next, this);
-	}
-	else
-	{
-		// 空の先頭イテレータを返す
-		return Iterator(nullptr, this);
-	}
+	return Begin();
 }
 
 /**
@@ -343,17 +333,7 @@ inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::End() const
 template<typename T>
 inline typename BidirectionalList<T>::Iterator BidirectionalList<T>::end() const
 {
-	// リストが空じゃないか
-	if (m_dummyNode->m_prev != m_dummyNode)
-	{
-		// 末尾イテレータを返す
-		return Iterator(m_dummyNode, this);
-	}
-	else
-	{
-		// 空の末尾イテレータを返す
-		return Iterator(nullptr, this);
-	}
+	return End();
 }
 
 /**
