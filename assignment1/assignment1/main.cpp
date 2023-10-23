@@ -11,7 +11,6 @@
 #include "BidirectionalList.h"
 #include "Record.h"
 
-
 using namespace std;
 
 
@@ -43,7 +42,7 @@ int main()
 	{
 	
 		istringstream istring(line);
-		string score;
+		int score;
 		string userName;
 
 		// それぞれの変数に格納
@@ -56,6 +55,13 @@ int main()
 		}
 	}
 	scoreFile.close();
+
+	// ユーザー名でソートする
+	bidirectionalList.QuickSort(bidirectionalList.ConstBegin(),bidirectionalList.ConstEnd(),
+		true,[](const Record& a, const Record& b) {
+		return a.score < b.score;});
+
+	
 
 	// 表示
 	for (const Record& rec: bidirectionalList)

@@ -9,6 +9,7 @@
 #include <iostream>
 #include <string>
 #include <assert.h>
+#include <functional>
 
 using namespace std;
 
@@ -19,7 +20,6 @@ using namespace std;
 template<typename T>
 class BidirectionalList
 {
-
 private:
 	/**
 	* @brief リスト内の要素
@@ -147,7 +147,6 @@ public:
 		*/
 		inline T& operator*();
 	};
-
 	/**
 	* @brief デフォルトコンストラクタ
 	*/
@@ -185,6 +184,19 @@ public:
 	* @return 削除が成功した場合 true、 無効なイテレータ、ダミーノード場合 false
 	*/
 	inline bool Delete(Const_Iterator& ite);
+
+	/**
+	* @brief クイックソート呼び出し関数
+	* @param[in]  iteLeft ソートする範囲の先頭イテレータ
+	* @param[in]  iteRight ソートする範囲の末尾イテレータ
+	* @param[in]  asc_des true : 昇順, false : 降順
+	* @param[in]  key ソートで使用するキー
+	* @detaile 参考にしたサイト https://cpprefjp.github.io/reference/algorithm/sort.html
+	* @detaile 参考にしたサイト http://www1.cts.ne.jp/~clab/hsample/Sort/Sort9.html
+	* @detaile 参考にしたサイト https://shinog.jp/computer/clanguage/%E5%86%8D%E5%B8%B0%E5%87%A6%E7%90%86%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E9%85%8D%E5%88%97%E5%86%85%E3%81%AE%E6%95%B0%E5%80%A4%E3%82%92%E6%95%B4%E5%88%97%E3%81%95%E3%81%9B%E3%82%8B_2%EF%BC%88/
+	*/
+	inline bool QuickSort(Const_Iterator iteLeft, Const_Iterator iteRight,
+		bool asc_des,function<bool(const T&, const T&)> key);
 
 	/**
 	* @brief 先頭イテレータを返す
@@ -225,8 +237,28 @@ public:
 	*/
 	inline Const_Iterator ConstEnd() const;
 
+private:
+
+	/**
+	* @brief クイックソートを実行する内部関数
+	* @param[in]  iteLeft ソートする範囲の先頭イテレータ
+	* @param[in]  iteRight ソートする範囲の末尾イテレータ
+	* @param[in]  asc_des true : 昇順, false : 降順
+	* @param[in]  key ソートで使用するキー
+	*/
+	inline void Sort(Const_Iterator  iteLeft, Const_Iterator  iteRight, bool asc_des,
+		function<bool(const T&, const T&)> key);
+
+	/**
+	* @brief クイックソートのための境目を見つける関数
+	* @param[in]  iteLeft ソートする範囲の先頭イテレータ
+	* @param[in]  iteRight ソートする範囲の末尾イテレータ
+	* @param[in]  asc_des true : 昇順, false : 降順
+	* @param[in]  key ソートで使用するキー
+	* @return 境目のイテレータ
+	*/
+	inline Const_Iterator Partition(Const_Iterator iteLeft, Const_Iterator iteRight,
+		bool asc_des, function<bool(const T&, const T&)> key);
 };
 #include "BidirectionalList.inl"
 #endif
-
-

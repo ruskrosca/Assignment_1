@@ -15,7 +15,7 @@
 struct Record
 {
 	//! スコア
-	std::string score;
+	int score;
 	//! ユーザー名
 	std::string userName;
 };

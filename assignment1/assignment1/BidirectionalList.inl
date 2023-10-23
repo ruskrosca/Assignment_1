@@ -4,6 +4,7 @@
 	@author			RyosukeNarsushima
 *//***********************************************************************************/
 #include "BidirectionalList.h"
+#include <assert.h>
 
 /**
 * @brief コンストラクタ
@@ -256,6 +257,26 @@ inline bool BidirectionalList<T>::Delete(Const_Iterator & ite)
 }
 
 /**
+* @brief クイックソート呼び出し関数
+* @param[in]  iteLeft ソートする範囲の先頭イテレータ
+* @param[in]  iteRight ソートする範囲の末尾イテレータ
+* @param[in]  asc_des true : 昇順, false : 降順
+* @param[in]  key ソートで使用するキー
+* @return ソートが成功した場合 true、それ以外の場合 false
+*/
+template<typename T>
+inline bool BidirectionalList<T>::QuickSort(Const_Iterator iteLeft, Const_Iterator iteRight,
+	bool asc_des, function<bool(const T&, const T&)> key)
+{
+	// 空か一個しか無い場合、キーがnullptrの場合は処理しない
+	if (GetSize() <= 1 || key == nullptr)
+		return false;
+	
+	Sort(iteLeft, --iteRight, asc_des, key);
+	return true;
+}
+
+/**
 * @brief 先頭イテレータを返す
 * @return bool 先頭イテレータ
 */
@@ -351,7 +372,96 @@ inline typename BidirectionalList<T>::Const_Iterator BidirectionalList<T>::Const
 	}
 	else
 	{
+
 		// 空の末尾constイテレータを返す
 		return Const_Iterator(nullptr, this);
 	}
+}
+
+/**
+* @brief クイックソートを実行する内部関数
+* @param[in]  iteLeft ソートする範囲の先頭イテレータ
+* @param[in]  iteRight ソートする範囲の末尾イテレータ
+* @param[in]  asc_des true : 昇順, false : 降順
+* @param[in]  key ソートで使用するキー
+*/
+template<typename T>
+inline void BidirectionalList<T>::Sort(Const_Iterator  iteLeft, Const_Iterator  iteRight, bool asc_des, function<bool(const T&, const T&)> key)
+{
+	// 左端と右端が等しくないか
+	if (iteLeft != iteRight)
+	{
+		// 境目を取得する
+		Const_Iterator pivot = Partition(iteLeft, iteRight, asc_des, key);
+		// 境目よりも左側を再帰的にソート
+		if (iteLeft != pivot)
+		{
+			Sort(iteLeft, --pivot, asc_des, key);
+		}
+		// 境目よりも右側を再帰的にソート
+		if (pivot != iteRight)
+		{
+			Sort(++pivot, iteRight, asc_des, key);
+		}
+	}
+}
+
+/**
+* @brief クイックソートのための境目を見つける関数
+* @param[in]  iteLeft ソートする範囲の先頭イテレータ
+* @param[in]  iteRight ソートする範囲の末尾イテレータ
+* @param[in]  asc_des true : 昇順, false : 降順
+* @param[in]  key ソートで使用するキー
+* @return 境目のイテレータ
+*/
+template<typename T>
+inline typename BidirectionalList<T>::Const_Iterator BidirectionalList<T>::Partition(Const_Iterator iteLeft, Const_Iterator iteRight,
+	bool asc_des, function<bool(const T&, const T&)> key)
+{
+	// 境目
+	Node* pivot = iteLeft.m_node;
+	// 左側
+	Node* left = iteLeft.m_node;
+	// 右側
+	Node* right = iteRight.m_node;
+
+	while (left != right)
+	{
+		if (asc_des)
+		{
+			// 左から比較
+			while (left != right && key(left->m_data, pivot->m_data))
+				left = left->m_next;
+			// 右から比較
+			while (left != right && key(pivot->m_data, right->m_data))
+				right = right->m_prev;
+		}
+		else
+		{
+			// 左から比較
+			while (left != right && key(pivot->m_data, left->m_data))
+				left = left->m_next;
+			// 右から比較
+			while (left != right && key(right->m_data, pivot->m_data))
+				right = right->m_prev;
+		}
+
+		if (left != right)
+		{
+			// 左右の要素を交換
+			T temp = left->m_data;
+			left->m_data = right->m_data;
+			right->m_data = temp;
+		}
+	}
+
+	// 境目と右端の要素を交換
+	T temp = pivot->m_data;
+	pivot->m_data = right->m_data;
+	right->m_data = temp;
+
+	// 境目のイテレータを返す
+	BidirectionalList<T>::Const_Iterator it;
+	it.m_node = right;
+	return it;
 }
