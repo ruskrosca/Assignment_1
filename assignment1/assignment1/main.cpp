@@ -13,6 +13,10 @@
 
 using namespace std;
 
+/**
+* @brief 表示用関数
+* @param[in]  成績データの入ったリストの情報
+*/
 void Display(BidirectionalList<Record>& list);
 
 int main()
@@ -57,14 +61,14 @@ int main()
 	}
 	scoreFile.close();
 
-	// ユーザー名でソートする
+	// スコアでソートする
 	bidirectionalList.QuickSort(bidirectionalList.ConstBegin(),bidirectionalList.ConstEnd(),
 		true,[](const Record& a, const Record& b) {
 		return a.score < b.score;});
 	// 表示
 	Display(bidirectionalList);
 
-
+	// ユーザー名でソートする
 	bidirectionalList.QuickSort(bidirectionalList.ConstBegin(),bidirectionalList.ConstEnd(),
 		true,[](const Record& a, const Record& b) {
 		return a.userName < b.userName;});
@@ -77,6 +81,10 @@ int main()
 	return 0;
 }
 
+/**
+* @brief 表示用関数
+* @param[in]  成績データの入ったリストの情報
+*/
 void Display(BidirectionalList<Record>& list)
 {
 	for (const Record& rec : list)
