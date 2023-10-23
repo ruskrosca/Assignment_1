@@ -1,3 +1,9 @@
+/**********************************************************************************//**
+	@file           QuickSort.cpp
+	@brief          GoogleTestテストコード (QuickSort.ver)
+	@author			RyosukeNarsushima
+*//***********************************************************************************/
+
 #include "pch.h"
 #include "../assignment1/BidirectionalList.h"
 #include "../assignment1/Record.h"
