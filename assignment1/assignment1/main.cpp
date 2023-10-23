@@ -13,6 +13,7 @@
 
 using namespace std;
 
+void Display(BidirectionalList<Record>& list);
 
 int main()
 {
@@ -60,15 +61,28 @@ int main()
 	bidirectionalList.QuickSort(bidirectionalList.ConstBegin(),bidirectionalList.ConstEnd(),
 		true,[](const Record& a, const Record& b) {
 		return a.score < b.score;});
+	// •\Ž¦
+	Display(bidirectionalList);
 
-	
+
+	bidirectionalList.QuickSort(bidirectionalList.ConstBegin(),bidirectionalList.ConstEnd(),
+		true,[](const Record& a, const Record& b) {
+		return a.userName < b.userName;});
+
 
 	// •\Ž¦
-	for (const Record& rec: bidirectionalList)
-	{
-		cout << rec.score << " " << rec.userName << endl;
-	}
+	Display(bidirectionalList);
 
 	getchar();
 	return 0;
+}
+
+void Display(BidirectionalList<Record>& list)
+{
+	for (const Record& rec : list)
+	{
+		cout << rec.score << " " << rec.userName << endl;
+	}
+	cout << endl;
+	cout << endl;
 }
